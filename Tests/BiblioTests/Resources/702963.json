@@ -1,0 +1,555 @@
+[
+  {
+    "@id": "http://id.loc.gov/resources/instances/702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Instance",
+      "http://id.loc.gov/ontologies/bibframe/Print"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/issuance": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/issuance/mono"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/provisionActivity": [
+      {
+        "@id": "_:b16iddOtlocdOtgovresourcesinstances702963"
+      },
+      {
+        "@id": "_:b132iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/carrier": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/carriers/nc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/media": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/mediaTypes/n"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/identifiedBy": [
+      {
+        "@id": "_:b52iddOtlocdOtgovresourcesinstances702963"
+      },
+      {
+        "@id": "_:b61iddOtlocdOtgovresourcesinstances702963"
+      },
+      {
+        "@id": "_:b70iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Dani Karavan : Hommage an Walter Benjamin : der Gedenkort \"Passagen\" in Portbou = Dani Karavan : homage to Walter Benjamin : \"Passages\" place of remembrance at Portbou"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/responsibilityStatement": [
+      {
+        "@value": "Ingrid Scheurmann, Konrad Scheurmann (Hrsg.)"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b90iddOtlocdOtgovresourcesinstances702963"
+      },
+      {
+        "@id": "_:b105iddOtlocdOtgovresourcesinstances702963"
+      },
+      {
+        "@id": "_:b120iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/provisionActivityStatement": [
+      {
+        "@value": "Mainz : Verlag Philipp von Zabern, 1995."
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/extent": [
+      {
+        "@id": "_:b163iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/note": [
+      {
+        "@id": "_:b172iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/dimensions": [
+      {
+        "@value": "27 cm."
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@id": "http://id.loc.gov/resources/instances"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/instanceOf": [
+      {
+        "@id": "http://id.loc.gov/resources/works/702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/hasItem": [
+      {
+        "@id": "http://id.loc.gov/resources/items/702963-050-15"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/adminMetadata": [
+      {
+        "@id": "_:b209iddOtlocdOtgovresourcesinstances702963"
+      }
+    ]
+  },
+  {
+    "@id": "_:b52iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Lccn"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "   96211068 "
+      }
+    ]
+  },
+  {
+    "@id": "_:b120iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ParallelTitle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Homage to Walter Benjamin"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Homage to Walter Benjamin"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/entities/agents/09db27b1450e90f6866d3352a38bf65f",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Verlag Philipp von Zabern"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority": [
+      {
+        "@id": "http://id.loc.gov/entities/providers/09db27b1450e90f6866d3352a38bf65f"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/countries/gw",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Place"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Germany"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/descriptionConventions/aacr",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionConventions"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "aacr"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/organizations/dlc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "DLC"
+      },
+      {
+        "@value": "DLC"
+      }
+    ]
+  },
+  {
+    "@id": "_:b16iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ProvisionActivity",
+      "http://id.loc.gov/ontologies/bibframe/Publication"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/date": [
+      {
+        "@type": "http://id.loc.gov/datatypes/edtf",
+        "@value": "1995"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/place": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/countries/gw"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/marcauthen/lccopycat",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionAuthentication"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "lccopycat"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/menclvl/f",
+    "@type": [
+      "http://id.loc.gov/ontologies/bflc/EncodingLevel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "full"
+      }
+    ]
+  },
+  {
+    "@id": "_:b213iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/GenerationProcess"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DLC marc2bibframe2 v1.7.0-SNAPSHOT"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2021-08-04T20:19:48-04:00"
+      }
+    ]
+  },
+  {
+    "@id": "_:b90iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Dani Karavan : Hommage an Walter Benjamin : der Gedenkort \"Passagen\" in Portbou = Dani Karavan : homage to Walter Benjamin : \"Passages\" place of remembrance at Portbou"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Dani Karavan"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/subtitle": [
+      {
+        "@value": "Hommage an Walter Benjamin : der Gedenkort \"Passagen\" in Portbou = Dani Karavan : homage to Walter Benjamin : \"Passages\" place of remembrance at Portbou"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/mediaTypes/n",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Media"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "unmediated"
+      }
+    ]
+  },
+  {
+    "@id": "_:b132iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ProvisionActivity",
+      "http://id.loc.gov/ontologies/bibframe/Publication"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/place": [
+      {
+        "@id": "_:b138iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/agent": [
+      {
+        "@id": "http://id.loc.gov/entities/agents/09db27b1450e90f6866d3352a38bf65f"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/date": [
+      {
+        "@value": "1995"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/carriers/nc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Carrier"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/organizations/ocolc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/works/702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Work"
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap": [
+      {
+        "@value": "Karavan, Dani. Dani Karavan : Hommage an Walter Benjamin : der Gedenkort \"Passagen\" in Portbou = Dani Karavan : homage to Walter Benjamin : \"Passages\" place of remembrance at Portbou"
+      }
+    ]
+  },
+  {
+    "@id": "_:b255iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Local"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ]
+  },
+  {
+    "@id": "_:b105iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/VariantTitle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hommage an Walter Benjamin"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/variantType": [
+      {
+        "@value": "portion"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Hommage an Walter Benjamin"
+      }
+    ]
+  },
+  {
+    "@id": "_:b285iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "NN"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/issuance/mono",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Issuance"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "monograph"
+      }
+    ]
+  },
+  {
+    "@id": "_:b70iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Local"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "35817463 "
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/ocolc"
+      }
+    ]
+  },
+  {
+    "@id": "_:b138iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Place"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Mainz"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/items/702963-050-15",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Item"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/shelfMark": [
+      {
+        "@id": "_:b195iddOtlocdOtgovresourcesinstances702963"
+      }
+    ]
+  },
+  {
+    "@id": "_:b61iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Isbn"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "3805318650"
+      }
+    ]
+  },
+  {
+    "@id": "_:b195iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ShelfMarkLcc"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "D838.S7 K37 1995"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ]
+  },
+  {
+    "@id": "_:b209iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationProcess": [
+      {
+        "@id": "_:b213iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/status": [
+      {
+        "@id": "_:b225iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/encodingLevel": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/menclvl/f"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionConventions": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/descriptionConventions/aacr"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/identifiedBy": [
+      {
+        "@id": "_:b255iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/changeDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "1997-06-16T16:33:04"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/creationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "1996-10-18"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d906": [
+      {
+        "@value": "=906     $a 7 $b cbc $c copycat $d 3 $e ncip $f 19 $g y-gencatlg"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d955": [
+      {
+        "@value": "=955     $a uc08 to cat 11-19-96; jk00 11-21-96; jf04 (desc.) to jk00 for subj. 05-13-97; to HLCD jk01 05-16-97; lg23 to sl 06-02-97; lg08 06-03-97"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "_:b285iddOtlocdOtgovresourcesinstances702963"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionModifier": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionAuthentication": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/marcauthen/lccopycat"
+      }
+    ]
+  },
+  {
+    "@id": "_:b225iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Status"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "new"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "n"
+      }
+    ]
+  },
+  {
+    "@id": "_:b172iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Note",
+      ""
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ill. (some col.)"
+      }
+    ]
+  },
+  {
+    "@id": "_:b163iddOtlocdOtgovresourcesinstances702963",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Extent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "181 p."
+      }
+    ]
+  }
+]
