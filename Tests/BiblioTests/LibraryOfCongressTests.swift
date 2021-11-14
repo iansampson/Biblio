@@ -22,7 +22,7 @@ final class LibraryOfCongressTests: XCTestCase {
         let data = try Data(contentsOf: url)
         
         // When
-        let instance = try Instance(jsonLD: data)
+        let instance = try JSONDecoder().decode(Instance.self, from: data)
         
         // let instance = try JSONDecoder().decode([Property].self, from: data)
         // let properties = try JSONDecoder().decode([Property].self, from: data)

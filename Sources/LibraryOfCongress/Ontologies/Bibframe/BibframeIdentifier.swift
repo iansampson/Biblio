@@ -73,6 +73,8 @@ extension Bibframe {
     }
 }
 
+// TODO: Consider using literals to represent raw values
+// (the way Bibframe.Class and Bibframe.Property do)
 extension Bibframe.IdentifierType: Decodable {
     public init?(path: String) {
         let prefix = "http://id.loc.gov/ontologies/bibframe/"
@@ -107,11 +109,12 @@ extension Bibframe.IdentifierType: Decodable {
 }
 
 extension Bibframe.Identifier {
-    static func decodeDefinition(container: KeyedDecodingContainer<Property.CodingKeys>) throws -> String? {
-        if let value = try container.decodeIfPresent([Property.Content].self, forKey: .value) {
+    /// Decodes a Bibframe identifier definition from a keyed container encoded in JSON-LD
+    static func decodeDefinition(container: KeyedDecodingContainer<RDF.Property>) throws -> String? {
+        if let value = try container.decodeIfPresent([RDF.Content].self, forKey: .value) {
             return value.first?.value?
                 .trimmingCharacters(in: .whitespacesAndNewlines)
-        } else if let label = try container.decodeIfPresent([Property.Content].self, forKey: .label) {
+        } else if let label = try container.decodeIfPresent([RDF.Content].self, forKey: .label) {
             return label.first?.value?
                 .trimmingCharacters(in: .whitespacesAndNewlines)
         } else {
@@ -119,7 +122,8 @@ extension Bibframe.Identifier {
         }
     }
     
-    init?(container: KeyedDecodingContainer<Property.CodingKeys>) throws {
+    /// Decodes a Bibframe identifier from a keyed container encoded in JSON-LD
+    init?(container: KeyedDecodingContainer<RDF.Property>) throws {
         let type = try container.decode([String].self, forKey: .type)
             .compactMap { Bibframe.IdentifierType(path: $0) }
             .first
