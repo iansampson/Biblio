@@ -7,9 +7,11 @@
 
 import Foundation
 
-public struct Instance: Decodable {
+public struct Instance {
     public let identifiers: [Bibframe.IdentifierType: String]
-    
+}
+
+extension Instance: Decodable {
     public init(from decoder: Decoder) throws {
         var identifiers: [Bibframe.IdentifierType: String] = [:]
         

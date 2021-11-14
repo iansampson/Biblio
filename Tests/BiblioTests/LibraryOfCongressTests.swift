@@ -9,8 +9,20 @@ import XCTest
 import LibraryOfCongress
 
 final class LibraryOfCongressTests: XCTestCase {
-    func testSearch() async throws {
+    /*func testSearch() async throws {
         let results = try await LinkedDataService.search("Walter Benjamin")
+    }*/
+    
+    func testDecodeIdentifierType() throws {
+        // Given
+        let string = "http://id.loc.gov/ontologies/bibframe/Lccn"
+        let data = try JSONEncoder().encode(string)
+        
+        // When
+        let decodedType = try JSONDecoder().decode(Bibframe.IdentifierType.self, from: data)
+        
+        // Then
+        XCTAssertEqual(decodedType, .lccn)
     }
     
     func testDecodeInstance() throws {
@@ -23,29 +35,11 @@ final class LibraryOfCongressTests: XCTestCase {
         
         // When
         let instance = try JSONDecoder().decode(Instance.self, from: data)
-        
-        // let instance = try JSONDecoder().decode([Property].self, from: data)
-        // let properties = try JSONDecoder().decode([Property].self, from: data)
-        
+
         // Then
+        XCTAssertEqual(Set(instance.identifiers.keys),
+                       Set([.isbn, .local, .shelfMarkLcc, .lccn]))
+        
         dump(instance.identifiers)
-        
-        /*for property in properties {
-            property.type.contains { type in
-                
-            }
-        }*/
-    }
-    
-    func testDecodeIdentifierType() throws {
-        // Given
-        let string = "http://id.loc.gov/ontologies/bibframe/Lccn"
-        let data = try JSONEncoder().encode(string)
-        
-        // When
-        let decodedType = try JSONDecoder().decode(Bibframe.IdentifierType.self, from: data)
-        
-        // Then
-        XCTAssertEqual(decodedType, .lccn)
     }
 }

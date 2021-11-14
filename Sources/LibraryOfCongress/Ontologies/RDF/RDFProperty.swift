@@ -17,9 +17,12 @@ public enum RDF {
     public struct Content: Decodable {
         let id: String?
         let type: String?
-        let label: String?
         let value: String?
         
-        public typealias CodingKeys = RDF.Property
+        public enum CodingKeys: String, CodingKey {
+            case id = "@id"
+            case type = "@type"
+            case value = "@value"
+        }
     }
 }
