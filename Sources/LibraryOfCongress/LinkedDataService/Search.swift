@@ -8,6 +8,7 @@
 import Foundation
 import FeedKit
 
+// TODO: Consider initializing as an object with a given URLSession
 public enum LinkedDataService {
     public struct SearchResult {
         public let title: String
