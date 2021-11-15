@@ -18,9 +18,29 @@ public final class LinkedDataService {
 }
 
 extension LinkedDataService {
+    public enum Error: Swift.Error {
+        case invalidURL(URL)
+        case expectedWorkPropertyOnInstance(Instance)
+    }
+    
     public func instance(atURL url: URL) async throws -> Instance {
+        guard url.deletingLastPathComponent().lastPathComponent == "instances",
+              url.pathExtension == "json"
+        else {
+            throw Error.invalidURL(url)
+        }
         let (data, _) = try await urlSession.data(from: url)
         return try JSONDecoder().decode(Instance.self, from: data)
+    }
+    
+    public func work(atURL url: URL) async throws -> Work {
+        guard url.deletingLastPathComponent().lastPathComponent == "works",
+              url.pathExtension == "json"
+        else {
+            throw Error.invalidURL(url)
+        }
+        let (data, _) = try await urlSession.data(from: url)
+        return try JSONDecoder().decode(Work.self, from: data)
     }
     
     public func instance(withID id: String) async throws -> Instance {
@@ -33,11 +53,6 @@ extension LinkedDataService {
         return try await instance(atURL: url)
     }
     
-    public func work(atURL url: URL) async throws -> Work {
-        let (data, _) = try await urlSession.data(from: url)
-        return try JSONDecoder().decode(Work.self, from: data)
-    }
-    
     public func work(withID id: String) async throws -> Work {
         guard let url = URL(string: "https://id.loc.gov/resources/works")?
                 .appendingPathComponent(id)
@@ -48,11 +63,9 @@ extension LinkedDataService {
         return try await work(atURL: url)
     }
     
-    public func work(for instance: Instance) async throws -> Work? {
+    public func work(for instance: Instance) async throws -> Work {
         guard let url = instance.work else {
-            return nil
-            // TODO: Consider throwing an error or making `work`
-            // a non-optional property on `Instance`
+            throw Error.expectedWorkPropertyOnInstance(instance)
         }
         let (data, _) = try await urlSession.data(from: url)
         return try JSONDecoder().decode(Work.self, from: data)
