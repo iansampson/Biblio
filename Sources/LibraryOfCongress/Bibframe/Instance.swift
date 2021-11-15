@@ -17,6 +17,7 @@ struct Instance {
     let variantTitle: Title? // Or making them strings
     let responsibilityStatement: String?
     let provisionActivity: ProvisionActivity?
+    let issuance: Issuance?
 }
 // TODO: Remove more Optionals if possible
 
@@ -54,5 +55,7 @@ extension Instance: Decodable {
         responsibilityStatement = instance.responsibilityStatements?.first?.value
         
         provisionActivity = try .init(expanding: instance.provisionActivity, in: document)
+        
+        issuance = try .init(expanding: instance.issuance, in: document)
     }
 }

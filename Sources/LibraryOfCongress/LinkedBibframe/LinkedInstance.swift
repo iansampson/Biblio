@@ -13,6 +13,7 @@ extension LinkedData {
         let titles: [Link]?
         let responsibilityStatements: [Value]?
         let provisionActivity: [Link]?
+        let issuance: [Link]?
         
         enum CodingKeys: String, CodingKey {
             case types = "@type"
@@ -21,6 +22,7 @@ extension LinkedData {
             case titles = "http://id.loc.gov/ontologies/bibframe/title"
             case responsibilityStatements = "http://id.loc.gov/ontologies/bibframe/responsibilityStatement"
             case provisionActivity = "http://id.loc.gov/ontologies/bibframe/provisionActivity"
+            case issuance = "http://id.loc.gov/ontologies/bibframe/issuance"
         }
     }
     

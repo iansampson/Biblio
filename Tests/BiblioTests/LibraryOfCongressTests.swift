@@ -24,7 +24,7 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(instance.variantTitle?.value, "Hommage an Walter Benjamin")
         XCTAssertEqual(instance.provisionActivity?.place, "Mainz")
         XCTAssertNotNil(instance.responsibilityStatement)
-        print(instance)
+        XCTAssertEqual(instance.issuance, .monograph)
     }
     
     func testDecodeWork() throws {
