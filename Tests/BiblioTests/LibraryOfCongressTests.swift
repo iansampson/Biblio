@@ -17,10 +17,13 @@ final class LibraryOfCongressTests: XCTestCase {
         let instance = try JSONDecoder().decode(Instance.self, from: data)
         
         // Then
-        XCTAssertNotNil(instance.responsibilityStatement)
         XCTAssertEqual(instance.identifiers.count, 3)
         XCTAssertNotNil(instance.work)
+        XCTAssertEqual(instance.title?.value, "Dani Karavan")
+        XCTAssertEqual(instance.variantTitle?.value, "Hommage an Walter Benjamin")
         XCTAssertEqual(instance.provisionActivity?.place, "Mainz")
+        XCTAssertNotNil(instance.responsibilityStatement)
+        print(instance)
     }
     
     func testDecodeWork() throws {

@@ -12,6 +12,8 @@ import Foundation
 struct Instance {
     let identifiers: [IdentifierType: String]
     let work: URL?
+    let title: Title? // Consider a more complex struct for title parts
+    let variantTitle: Title? // Or making them strings
     let responsibilityStatement: String?
     let provisionActivity: ProvisionActivity?
 }
@@ -39,6 +41,20 @@ extension Instance: Decodable {
         work = instance.works?.first?.id
             .flatMap(URL.init(string:))?
             .secure
+        
+        // TODO: Abstract into Title initializer
+        let titles = try document.expand(instance.titles, into: LinkedData.Title.self)
+            .compactMap { title -> Title? in
+                let type = title.type?.first.flatMap(TitleType.init(rawValue:)) ?? .regular
+                guard let value = title.mainTitles?.first?.value else {
+                    return nil
+                }
+                // or .subtitle
+                return Title(type: type, value: value)
+            }
+            
+        title = titles.first { $0.type == .regular }
+        variantTitle = titles.first { $0.type == .variant }
         
         responsibilityStatement = instance.responsibilityStatements?.first?.value
         

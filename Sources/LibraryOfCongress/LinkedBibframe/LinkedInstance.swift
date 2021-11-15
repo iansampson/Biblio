@@ -9,12 +9,14 @@ extension LinkedData {
     struct Instance: Decodable {
         let identifiers: [Link]?
         let works: [Link]? // isInstanceOf
+        let titles: [Link]?
         let responsibilityStatements: [Value]?
         let provisionActivity: [Link]?
         
         enum CodingKeys: String, CodingKey {
             case identifiers = "http://id.loc.gov/ontologies/bibframe/identifiedBy"
             case works = "http://id.loc.gov/ontologies/bibframe/instanceOf"
+            case titles = "http://id.loc.gov/ontologies/bibframe/title"
             case responsibilityStatements = "http://id.loc.gov/ontologies/bibframe/responsibilityStatement"
             case provisionActivity = "http://id.loc.gov/ontologies/bibframe/provisionActivity"
         }
@@ -30,6 +32,20 @@ extension LinkedData {
             case places = "http://id.loc.gov/ontologies/bibframe/place"
             case agents = "http://id.loc.gov/ontologies/bibframe/agent"
             case dates = "http://id.loc.gov/ontologies/bibframe/date"
+        }
+    }
+    
+    struct Title: Decodable {
+        let type: [String]?
+        let labels: [Value]?
+        let mainTitles: [Value]?
+        let subtitles: [Value]?
+        
+        enum CodingKeys: String, CodingKey {
+            case type = "@type"
+            case labels = "http://www.w3.org/2000/01/rdf-schema#label"
+            case mainTitles = "http://id.loc.gov/ontologies/bibframe/mainTitle"
+            case subtitles = "http://id.loc.gov/ontologies/bibframe/subtitle"
         }
     }
 }
