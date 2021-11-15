@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-14.
 //
 
-import Foundation
+/*import Foundation
 
 extension Bibframe {
     public struct Work: Decodable {
@@ -115,4 +115,4 @@ extension Bibframe.CodingKeys: JSONLDCodingKey {
     static var jsonLDType: Bibframe.CodingKeys {
         .rdf(.type)
     }
-}
+}*/

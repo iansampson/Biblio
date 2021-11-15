@@ -9,11 +9,13 @@ import Foundation
 // TODO: Avoid Foundation dependency if possible
 // (only used for URL so far)
 
-struct Instance: Decodable {
+struct Instance {
     let identifiers: [IdentifierType: String]
     let work: URL?
     let responsibilityStatement: String?
-    
+}
+
+extension Instance: Decodable {
     init(from decoder: Decoder) throws {
         let document = try Document(from: decoder)
         let instance = try document.decode(LinkedData.Instance.self,
