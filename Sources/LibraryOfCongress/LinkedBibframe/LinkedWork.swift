@@ -7,7 +7,7 @@
 
 extension LinkedData {
     struct Work: Decodable {
-        let types: [String]?
+        let types: [String]
         let contributions: [Link]?
         let languages: [Link]?
         

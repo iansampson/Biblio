@@ -31,7 +31,7 @@ extension Instance: Decodable {
                                        withTypeName: "http://id.loc.gov/ontologies/bibframe/Instance",
                                        idPrefix: "http://id.loc.gov/resources/instances")
         
-        type = instance.types?.compactMap(InstanceType.init(rawValue:))
+        type = instance.types.compactMap(InstanceType.init(rawValue:))
             .filter { $0 != .unknown }
             .first ?? .unknown
         

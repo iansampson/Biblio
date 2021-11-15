@@ -7,7 +7,7 @@
 
 extension LinkedData {
     struct Instance: Decodable {
-        let types: [String]?
+        let types: [String]
         let identifiers: [Link]?
         let works: [Link]? // isInstanceOf
         let titles: [Link]?

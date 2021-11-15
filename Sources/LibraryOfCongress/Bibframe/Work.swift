@@ -19,7 +19,7 @@ extension Work: Decodable {
         let work = try document.decode(LinkedData.Work.self,
                                        withTypeName: "http://id.loc.gov/ontologies/bibframe/Work",
                                        idPrefix: "http://id.loc.gov/resources/works")
-        type = work.types?.compactMap(WorkType.init(rawValue:))
+        type = work.types.compactMap(WorkType.init(rawValue:))
             .filter { $0 != .unknown }
             .first ?? .unknown
         
