@@ -20,6 +20,7 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertNotNil(instance.responsibilityStatement)
         XCTAssertEqual(instance.identifiers.count, 3)
         XCTAssertNotNil(instance.work)
+        XCTAssertEqual(instance.provisionActivity?.place, "Mainz")
     }
     
     func testDecodeWork() throws {

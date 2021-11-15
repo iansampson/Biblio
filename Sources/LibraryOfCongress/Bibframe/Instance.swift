@@ -13,7 +13,9 @@ struct Instance {
     let identifiers: [IdentifierType: String]
     let work: URL?
     let responsibilityStatement: String?
+    let provisionActivity: ProvisionActivity?
 }
+// TODO: Remove more Optionals if possible
 
 extension Instance: Decodable {
     init(from decoder: Decoder) throws {
@@ -39,5 +41,22 @@ extension Instance: Decodable {
             .secure
         
         responsibilityStatement = instance.responsibilityStatements?.first?.value
+        
+        // TODO: Abstract into ProvisionActivity initializer
+        provisionActivity = try document.expand(instance.provisionActivity,
+                                                into: LinkedData.ProvisionActivity.self)
+            .lazy
+            .compactMap { activity -> ProvisionActivity? in
+                let place = try document.expand(activity.places, into: Node.self)
+                    .first?.labels?.first?.value
+                let agent = try Agent(expanding: activity.agents, in: document)
+                let date = activity.dates?.first?.value
+                return ProvisionActivity(place: place, agent: agent, date: date)
+            }
+            .sorted { (first, second) in
+                first.agent != nil && second.agent == nil
+            }
+            .first
+        // TODO: Find a better way to select which provision activity to use (or use both)
     }
 }

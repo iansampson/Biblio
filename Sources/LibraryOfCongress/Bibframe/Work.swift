@@ -21,17 +21,13 @@ extension Work: Decodable {
         self.contributions = try document
             .expand(work.contributions, into: LinkedData.Contribution.self)
             .compactMap {
-                guard let firstAgent = try document.expand($0.agents, into: LinkedData.Agent.self).first,
-                      let name = firstAgent.names.first?.value,
-                      let authority = firstAgent.isIdentifiedByAuthorities.first?.id.flatMap(URL.init(string:))
-                else {
+                guard let agent = try Agent(expanding: $0.agents, in: document) else {
                     return nil
                 }
                 
                 let roles = $0.roles.compactMap({ $0.id })
                     .compactMap(Relator.init(rawValue:))
-                return Contribution(agent: .init(name: name, authority: authority),
-                                    roles: roles)
+                return Contribution(agent: agent, roles: roles)
             }
     }
 }
