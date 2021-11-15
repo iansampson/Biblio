@@ -40,6 +40,7 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(work.type, .text)
         XCTAssertEqual(work.contributions.count, 2)
         XCTAssertEqual(work.contributions.first?.roles, [.author, .illustrator])
+        XCTAssertEqual(work.languages, [.english])
     }
 }
 // TODO: Throw error when trying to decode something that is *not* a Work

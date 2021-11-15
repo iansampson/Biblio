@@ -10,6 +10,7 @@ import Foundation
 struct Work {
     let type: WorkType
     let contributions: [Contribution]
+    let languages: [Language]
 }
 
 extension Work: Decodable {
@@ -34,5 +35,7 @@ extension Work: Decodable {
                     .compactMap(Relator.init(rawValue:))
                 return Contribution(agent: agent, roles: roles)
             }
+        
+        languages = .init(expanding: work.languages)
     }
 }
