@@ -5,8 +5,8 @@
 //  Created by Ian Sampson on 2021-11-15.
 //
 
-struct Extent {
-    let string: String
+public struct Extent {
+    public let string: String
     // TODO: Parse extent statement
 }
 

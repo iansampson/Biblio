@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-15.
 //
 
-enum WorkType: String {
+public enum WorkType: String {
     case hub = "http://id.loc.gov/ontologies/bibframe/Hub"
     case text = "http://id.loc.gov/ontologies/bibframe/Text"
     case cartography = "http://id.loc.gov/ontologies/bibframe/Cartography"

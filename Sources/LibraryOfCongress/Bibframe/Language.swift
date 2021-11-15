@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-15.
 //
 
-enum Language: String {
+public enum Language: String {
     case abkhaz = "http://id.loc.gov/vocabulary/languages/abk"
     case achinese = "http://id.loc.gov/vocabulary/languages/ace"
     case acoli = "http://id.loc.gov/vocabulary/languages/ach"

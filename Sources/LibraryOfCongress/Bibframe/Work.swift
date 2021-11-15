@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Work {
-    let type: WorkType
-    let contributions: [Contribution]
-    let languages: [Language]
+public struct Work {
+    public let type: WorkType
+    public let contributions: [Contribution]
+    public let languages: [Language]
 }
 
 extension Work: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let document = try Document(from: decoder)
         let work = try document.decode(LinkedData.Work.self,
                                        withTypeName: "http://id.loc.gov/ontologies/bibframe/Work",

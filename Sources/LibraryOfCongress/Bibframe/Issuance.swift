@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-15.
 //
 
-enum Issuance: String {
+public enum Issuance: String {
     case serial = "http://id.loc.gov/vocabulary/issuance/serl"
     case integrating = "http://id.loc.gov/vocabulary/issuance/intg"
     case monograph = "http://id.loc.gov/vocabulary/issuance/mono"

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Agent {
-    let name: String
-    let authority: URL
+public struct Agent {
+    public let name: String
+    public let authority: URL
 }
 // TODO: Specify type of agent
 // TODO: Make authority optional

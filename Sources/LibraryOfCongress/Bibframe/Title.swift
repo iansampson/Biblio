@@ -5,12 +5,12 @@
 //  Created by Ian Sampson on 2021-11-15.
 //
 
-struct Title {
-    let type: TitleType
-    let value: String
+public struct Title {
+    public let type: TitleType
+    public let value: String
 }
 
-enum TitleType: String {
+public enum TitleType: String {
     case regular = "http://id.loc.gov/ontologies/bibframe/Title"
     case variant = "http://id.loc.gov/ontologies/bibframe/VariantTitle"
     case parallel = "http://id.loc.gov/ontologies/bibframe/ParallelTitle"

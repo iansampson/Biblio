@@ -8,8 +8,7 @@
 import Foundation
 import FeedKit
 
-// TODO: Consider initializing as an object with a given URLSession
-public enum LinkedDataService {
+extension LinkedDataService {
     public struct SearchResult {
         public let title: String
         public let url: URL
@@ -18,7 +17,7 @@ public enum LinkedDataService {
     }
     
     /// Searches the Library of Congress Linked Data Service and returns an array of results.
-    public static func search(_ query: String, count: Int? = nil) async throws -> [SearchResult] {
+    public func search(_ query: String, count: Int? = nil) async throws -> [SearchResult] {
         guard var components = URLComponents(string: "https://id.loc.gov/search/") else {
             fatalError()
         }
@@ -38,7 +37,7 @@ public enum LinkedDataService {
         }
         
         // TODO: Inject URLSession dependency
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, _) = try await urlSession.data(from: url)
         let result = FeedParser(data: data).parse()
         
         switch result {

@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-14.
 //
 
-enum IdentifierType: String {
+public enum IdentifierType: String {
     case shelfMark = "http://id.loc.gov/ontologies/bibframe/ShelfMark"
     case shelfMarkDdc = "http://id.loc.gov/ontologies/bibframe/ShelfMarkDdc"
     case shelfMarkLcc = "http://id.loc.gov/ontologies/bibframe/ShelfMarkLcc"

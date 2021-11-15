@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-15.
 //
 
-enum InstanceType: String {
+public enum InstanceType: String {
     case print = "http://id.loc.gov/ontologies/bibframe/Print"
     case manuscript = "http://id.loc.gov/ontologies/bibframe/Manuscript"
     case archival = "http://id.loc.gov/ontologies/bibframe/Archival"

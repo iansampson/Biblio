@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-15.
 //
 
-enum Carrier: String {
+public enum Carrier: String {
     case apertureCard = "http://id.loc.gov/vocabulary/carriers/ha"
     case audioCartridge = "http://id.loc.gov/vocabulary/carriers/sg"
     case audioCylinder = "http://id.loc.gov/vocabulary/carriers/se"

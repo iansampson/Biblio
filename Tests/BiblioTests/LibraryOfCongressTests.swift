@@ -9,6 +9,11 @@ import XCTest
 @testable import LibraryOfCongress
 
 final class LibraryOfCongressTests: XCTestCase {
+    func testSearch() async throws {
+        let results = try await LinkedDataService().search("Walter Benjamin")
+        XCTAssert(!results.isEmpty)
+    }
+    
     func testDecodeInstance() throws {
         // Given
         let data = try Data(name: "702963", extension: "json")
@@ -43,11 +48,6 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(work.languages, [.english])
     }
 }
-// TODO: Throw error when trying to decode something that is *not* a Work
-// TODO: Parse names
-// TODO: Mark primary contributor(s)
-// TODO: Add search again
-// TODO: Fetch Work from Instance
 
 enum TestError: Error {
     case missingTestData
@@ -61,3 +61,9 @@ extension Data {
         try self.init(contentsOf: url)
     }
 }
+
+// TODO: Throw error when trying to decode something that is *not* a Work
+// TODO: Parse names
+// TODO: Mark primary contributor(s)
+// TODO: Add search again
+// TODO: Fetch Work from Instance
