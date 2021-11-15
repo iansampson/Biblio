@@ -1,0 +1,100 @@
+[
+  {
+    "@id": "http://id.loc.gov/vocabulary/languages/eng",
+    "@type": [
+      "http://www.loc.gov/mads/rdf/v1#Language"
+    ],
+    "http://www.loc.gov/mads/rdf/v1#code": [
+      {
+        "@value": "eng"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/works/16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Work"
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap": [
+      {
+        "@value": "Hajnoczky, Helen. Poets and killers : a life in advertising"
+      }
+    ]
+  },
+  {
+    "@id": "_:b12iddOtlocdOtgovrwoagentsno2008131957",
+    "@type": [
+      "http://www.loc.gov/mads/rdf/v1#Geographic"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "(naf) Hungary"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/rwo/agents/no2008131957",
+    "@type": [
+      "http://www.loc.gov/mads/rdf/v1#RWO",
+      "http://id.loc.gov/ontologies/bibframe/Person",
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hajnoczky, Helen"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#birthDate": [
+      {
+        "@id": "_:b8iddOtlocdOtgovrwoagentsno2008131957"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#birthPlace": [
+      {
+        "@id": "_:b12iddOtlocdOtgovrwoagentsno2008131957"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#associatedLocale": [
+      {
+        "@id": "_:b16iddOtlocdOtgovrwoagentsno2008131957"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#associatedLanguage": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/languages/eng"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/contributorTo": [
+      {
+        "@id": "http://id.loc.gov/resources/works/16625871"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority": [
+      {
+        "@id": "http://id.loc.gov/authorities/names/no2008131957"
+      }
+    ]
+  },
+  {
+    "@id": "_:b16iddOtlocdOtgovrwoagentsno2008131957",
+    "@type": [
+      "http://www.loc.gov/mads/rdf/v1#Geographic"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "(naf) Canada"
+      }
+    ]
+  },
+  {
+    "@id": "_:b8iddOtlocdOtgovrwoagentsno2008131957",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "(edtf) 1985-09-05"
+      }
+    ]
+  }
+]

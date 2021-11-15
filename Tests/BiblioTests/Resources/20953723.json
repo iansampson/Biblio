@@ -1,0 +1,845 @@
+[
+  {
+    "@id": "http://id.loc.gov/rwo/agents/no00004156",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Person"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Holbrook, Susan L. (Susan Leslie), 1967-"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority": [
+      {
+        "@id": "http://id.loc.gov/authorities/names/no00004156"
+      }
+    ]
+  },
+  {
+    "@id": "_:b104iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Contribution",
+      "http://id.loc.gov/ontologies/bflc/PrimaryContribution"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/agent": [
+      {
+        "@id": "http://id.loc.gov/rwo/agents/no2008131957"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/role": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/relators/aut"
+      },
+      {
+        "@id": "http://id.loc.gov/vocabulary/relators/ill"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/instances/20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Instance"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b295iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/provisionActivityStatement": [
+      {
+        "@value": "Toronto : Coach House Books, [2016]"
+      }
+    ]
+  },
+  {
+    "@id": "_:b355iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Local"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ]
+  },
+  {
+    "@id": "_:b295iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Magyarázni"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Magyarázni"
+      }
+    ]
+  },
+  {
+    "@id": "_:b313iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/GenerationProcess"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DLC marc2bibframe2 v1.7.0-SNAPSHOT"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2021-08-04T21:56:50-04:00"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/millus/por",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Illustration"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "portraits"
+      }
+    ]
+  },
+  {
+    "@id": "_:b309iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationProcess": [
+      {
+        "@id": "_:b313iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/status": [
+      {
+        "@id": "_:b325iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/encodingLevel": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/menclvl/f"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionConventions": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/descriptionConventions/isbd"
+      },
+      {
+        "@id": "http://id.loc.gov/vocabulary/descriptionConventions/rda"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/identifiedBy": [
+      {
+        "@id": "_:b355iddOtlocdOtgovresourcesworks20953723"
+      },
+      {
+        "@id": "_:b388iddOtlocdOtgovresourcesworks20953723"
+      },
+      {
+        "@id": "_:b406iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/changeDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2019-11-19T15:53:08"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/creationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-04-29"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d906": [
+      {
+        "@value": "=906     $a 7 $b cbc $c copycat $d 3 $e ncip $f 20 $g y-gencatlg"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d925": [
+      {
+        "@value": "=925  0  $a acquire $b 1 shelf copy $x policy default"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d955": [
+      {
+        "@value": "=955     $b hc15 2019-04-29 z-processor $a hc15 b2019-09-14 to rev $r cm15 2019-09-30 to BCCD $a hc15 2019-11-19 to BCCD"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "_:b424iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionLanguage": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/languages/eng"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionModifier": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionAuthentication": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/marcauthen/pcc"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/relators/aut",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Role"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "author"
+      }
+    ]
+  },
+  {
+    "@id": "_:b238iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://www.loc.gov/mads/rdf/v1#Topic"
+    ],
+    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [
+      {
+        "@value": "Canadian poetry"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/millus/ill",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Illustration"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "illustrations"
+      }
+    ]
+  },
+  {
+    "@id": "_:b388iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Local"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "(AMICUS)000044223695"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/source": [
+      {
+        "@id": "http://id.loc.gov/authorities/names/no2004037399"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/hubs/ebb72f05-192f-0136-5dd6-8a6bef9d2d31",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Work"
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap": [
+      {
+        "@value": "Hajnoczky, Helen, Poems. Selections"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap-normalized": [
+      {
+        "@value": "hajnoczkyhelenpoemsselections"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Poems. Selections"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/contribution": [
+      {
+        "@id": "_:b144iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b180iddOtlocdOtgovresourcesworks20953723"
+      }
+    ]
+  },
+  {
+    "@id": "_:b406iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Local"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "017856726"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/source": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/uk"
+      }
+    ]
+  },
+  {
+    "@id": "_:b424iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "NLC"
+      }
+    ]
+  },
+  {
+    "@id": "_:b66iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ClassificationLcc"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/classificationPortion": [
+      {
+        "@value": "PS8615 A3857"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/itemPortion": [
+      {
+        "@value": "M34 2016"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/authorities/names/no2004037399"
+      }
+    ]
+  },
+  {
+    "@id": "_:b161iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Role"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "author"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/organizations/dlc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "DLC"
+      },
+      {
+        "@value": "DLC"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/rwo/agents/no2008131957",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Person"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hajnoczky, Helen,"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority": [
+      {
+        "@id": "http://id.loc.gov/authorities/names/no2008131957"
+      }
+    ]
+  },
+  {
+    "@id": "_:b222iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Topic",
+      "http://www.loc.gov/mads/rdf/v1#ComplexSubject"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Canadian poetry--21st century."
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [
+      {
+        "@value": "Canadian poetry--21st century."
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSScheme": [
+      {
+        "@id": "http://id.loc.gov/authorities/subjects"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#componentList": [
+      {
+        "@list": [
+          {
+            "@id": "_:b238iddOtlocdOtgovresourcesworks20953723"
+          },
+          {
+            "@id": "_:b244iddOtlocdOtgovresourcesworks20953723"
+          }
+        ]
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap-normalized": [
+      {
+        "@value": "canadianpoetry21stcentury"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/descriptionConventions/rda",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionConventions"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "rda"
+      }
+    ]
+  },
+  {
+    "@id": "_:b282iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Magyarázni"
+      }
+    ]
+  },
+  {
+    "@id": "_:b196iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Magyarázni"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Magyarázni"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/authorities/names/no2004037399",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Source"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Library and Archives Canada"
+      }
+    ]
+  },
+  {
+    "@id": "_:b49iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ClassificationLcc"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/classificationPortion": [
+      {
+        "@value": "PR9199.4.H3455"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/itemPortion": [
+      {
+        "@value": "A6 2016"
+      }
+    ]
+  },
+  {
+    "@id": "_:b83iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ClassificationDdc"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/classificationPortion": [
+      {
+        "@value": "C811/.6"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/source": [
+      {
+        "@id": "_:b90iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/edition": [
+      {
+        "@value": "full"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/relators/edt",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Role"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "editor."
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/menclvl/f",
+    "@type": [
+      "http://id.loc.gov/ontologies/bflc/EncodingLevel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "full"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/languages/eng",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Language",
+      "http://id.loc.gov/ontologies/bibframe/Language"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "English"
+      },
+      {
+        "@value": "English"
+      }
+    ]
+  },
+  {
+    "@id": "_:b90iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Source"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "23"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/instances/20953723-776-36",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Instance"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b282iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/provisionActivityStatement": [
+      {
+        "@value": "Toronto, Ontario, Canada : Coach House Books, 2016."
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/descriptionConventions/isbd",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionConventions"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isbd"
+      }
+    ]
+  },
+  {
+    "@id": "_:b325iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Status"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "corrected or revised"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "c"
+      }
+    ]
+  },
+  {
+    "@id": "_:b170iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Role"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "illustrator."
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/organizations/uk",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Source"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "Uk"
+      }
+    ]
+  },
+  {
+    "@id": "_:b150iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Person"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hajnoczky, Helen,"
+      }
+    ]
+  },
+  {
+    "@id": "_:b244iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://www.loc.gov/mads/rdf/v1#Temporal"
+    ],
+    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": [
+      {
+        "@value": "21st century"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/contentTypes/txt",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Content"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "text"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/source": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/genreFormSchemes/rdacontent"
+      }
+    ]
+  },
+  {
+    "@id": "_:b180iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Poems. Selections"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Poems. Selections"
+      }
+    ]
+  },
+  {
+    "@id": "_:b144iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Contribution",
+      "http://id.loc.gov/ontologies/bflc/PrimaryContribution"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/agent": [
+      {
+        "@id": "_:b150iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/role": [
+      {
+        "@id": "_:b161iddOtlocdOtgovresourcesworks20953723"
+      },
+      {
+        "@id": "_:b170iddOtlocdOtgovresourcesworks20953723"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/marcauthen/pcc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionAuthentication"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "pcc"
+      }
+    ]
+  },
+  {
+    "@id": "_:b256iddOtlocdOtgovresourcesworks20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Contribution"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/agent": [
+      {
+        "@id": "http://id.loc.gov/rwo/agents/no00004156"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/role": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/relators/edt"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/genreFormSchemes/rdacontent",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Source"
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/authorities/genreForms/gf2014026481",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/GenreForm"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "poetry"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/works/20953723",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Work",
+      "http://id.loc.gov/ontologies/bibframe/Text"
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap": [
+      {
+        "@value": "Hajnoczky, Helen, Magyarázni"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap-normalized": [
+      {
+        "@value": "hajnoczkyhelenmagyarázni"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/language": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/languages/eng"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/illustrativeContent": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/millus/ill"
+      },
+      {
+        "@id": "http://id.loc.gov/vocabulary/millus/por"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/genreForm": [
+      {
+        "@id": "http://id.loc.gov/authorities/genreForms/gf2014026481"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/classification": [
+      {
+        "@id": "_:b49iddOtlocdOtgovresourcesworks20953723"
+      },
+      {
+        "@id": "_:b66iddOtlocdOtgovresourcesworks20953723"
+      },
+      {
+        "@id": "_:b83iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/contribution": [
+      {
+        "@id": "_:b104iddOtlocdOtgovresourcesworks20953723"
+      },
+      {
+        "@id": "_:b256iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/expressionOf": [
+      {
+        "@id": "http://id.loc.gov/resources/hubs/ebb72f05-192f-0136-5dd6-8a6bef9d2d31"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Magyarázni"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b196iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/content": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/contentTypes/txt"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/subject": [
+      {
+        "@id": "_:b222iddOtlocdOtgovresourcesworks20953723"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@id": "http://id.loc.gov/resources/works"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/hasInstance": [
+      {
+        "@id": "http://id.loc.gov/resources/instances/20953723-776-36"
+      },
+      {
+        "@id": "http://id.loc.gov/resources/instances/20953723"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/adminMetadata": [
+      {
+        "@id": "_:b309iddOtlocdOtgovresourcesworks20953723"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/relators/ill",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Role"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "illustrator."
+      }
+    ]
+  }
+]

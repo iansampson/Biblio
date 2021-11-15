@@ -6,9 +6,9 @@
 //
 
 extension Bibframe {
-    public enum DecodingError: Error {
+    /*public enum DecodingError: Error {
         case failedToDecodeIdentifier(rawValue: String)
-    }
+    }*/
     
     public struct Identifier {
         public let type: IdentifierType
@@ -106,15 +106,19 @@ extension Bibframe.IdentifierType: Decodable {
         
         self = identifier
     }
+    
+    init?(class: Bibframe.Class) {
+        self.init(path: `class`.rawValue)
+    }
 }
 
 extension Bibframe.Identifier {
     /// Decodes a Bibframe identifier definition from a keyed container encoded in JSON-LD
-    static func decodeDefinition(container: KeyedDecodingContainer<RDF.Property>) throws -> String? {
-        if let value = try container.decodeIfPresent([RDF.Content].self, forKey: .value) {
+    static func decodeDefinition(container: KeyedDecodingContainer<Bibframe.CodingKeys>) throws -> String? {
+        if let value = try container.decodeIfPresent([RDF.Content].self, forKey: .rdf(.value)) {
             return value.first?.value?
                 .trimmingCharacters(in: .whitespacesAndNewlines)
-        } else if let label = try container.decodeIfPresent([RDF.Content].self, forKey: .label) {
+        } else if let label = try container.decodeIfPresent([RDF.Content].self, forKey: .rdf(.label)) {
             return label.first?.value?
                 .trimmingCharacters(in: .whitespacesAndNewlines)
         } else {
@@ -123,8 +127,8 @@ extension Bibframe.Identifier {
     }
     
     /// Decodes a Bibframe identifier from a keyed container encoded in JSON-LD
-    init?(container: KeyedDecodingContainer<RDF.Property>) throws {
-        let type = try container.decode([String].self, forKey: .type)
+    init?(container: KeyedDecodingContainer<Bibframe.CodingKeys>) throws {
+        let type = try container.decode([String].self, forKey: .rdf(.type))
             .compactMap { Bibframe.IdentifierType(path: $0) }
             .first
         

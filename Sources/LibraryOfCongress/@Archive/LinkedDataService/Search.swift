@@ -17,15 +17,19 @@ public enum LinkedDataService {
     }
     
     /// Searches the Library of Congress Linked Data Service and returns an array of results.
-    public static func search(_ query: String) async throws -> [SearchResult] {
+    public static func search(_ query: String, count: Int? = nil) async throws -> [SearchResult] {
         guard var components = URLComponents(string: "https://id.loc.gov/search/") else {
             fatalError()
         }
         
         components.queryItems = [
             .init(name: "q", value: query),
-            .init(name: "format", value: "atom")
+            .init(name: "format", value: "atom"),
         ]
+        
+        if let count = count {
+            components.queryItems?.append(.init(name: "count", value: String(count)))
+        }
         
         guard let url = components.url else {
             fatalError()

@@ -1,0 +1,431 @@
+[
+  {
+    "@id": "http://id.loc.gov/vocabulary/languages/eng",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Language",
+      "http://id.loc.gov/ontologies/bibframe/Language"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "English"
+      },
+      {
+        "@value": "English"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/works/16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Work",
+      "http://id.loc.gov/ontologies/bibframe/Text"
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap": [
+      {
+        "@value": "Hajnoczky, Helen. Poets and killers : a life in advertising"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap-normalized": [
+      {
+        "@value": "hajnoczkyhelenpoetsandkillers:alifeinadvertising"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/content": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/contentTypes/txt"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/language": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/languages/eng"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/classification": [
+      {
+        "@id": "_:b31iddOtlocdOtgovresourcesworks16625871"
+      },
+      {
+        "@id": "_:b52iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/contribution": [
+      {
+        "@id": "_:b69iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Poets and killers : a life in advertising"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b96iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@id": "http://id.loc.gov/resources/works"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/hasInstance": [
+      {
+        "@id": "http://id.loc.gov/resources/instances/16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/adminMetadata": [
+      {
+        "@id": "_:b129iddOtlocdOtgovresourcesworks16625871"
+      }
+    ]
+  },
+  {
+    "@id": "_:b69iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Contribution",
+      "http://id.loc.gov/ontologies/bflc/PrimaryContribution"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/agent": [
+      {
+        "@id": "http://id.loc.gov/rwo/agents/no2008131957"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/role": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/relators/ctb"
+      }
+    ]
+  },
+  {
+    "@id": "_:b208iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "NLC"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/instances/16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Instance"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b112iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/provisionActivityStatement": [
+      {
+        "@value": "Montreal : Snare Books, c2010."
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/relators/ctb",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Role"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Contributor"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/menclvl/7",
+    "@type": [
+      "http://id.loc.gov/ontologies/bflc/EncodingLevel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "minimal"
+      }
+    ]
+  },
+  {
+    "@id": "_:b96iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Poets and killers : a life in advertising"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Poets and killers : a life in advertising"
+      }
+    ]
+  },
+  {
+    "@id": "_:b38iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Source"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "22"
+      }
+    ]
+  },
+  {
+    "@id": "_:b129iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationProcess": [
+      {
+        "@id": "_:b133iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/status": [
+      {
+        "@id": "_:b145iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/encodingLevel": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/menclvl/7"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionConventions": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/descriptionConventions/aacr"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/identifiedBy": [
+      {
+        "@id": "_:b175iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/changeDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2011-11-15T07:30:55"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/creationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2011-01-26"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d906": [
+      {
+        "@value": "=906     $a 7 $b cbc $c copycat $d 3 $e ncip $f 20 $g y-gencatlg"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d925": [
+      {
+        "@value": "=925  0  $a acquire $b 1 shelf copy $x policy default"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d955": [
+      {
+        "@value": "=955     $b hc06 2011-01-26 z-processor (telework) copy 1 $i hc05 2011-02-03 to BCCD"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "_:b208iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionLanguage": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/languages/eng"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionModifier": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionAuthentication": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/marcauthen/lccopycat"
+      }
+    ]
+  },
+  {
+    "@id": "_:b145iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Status"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "corrected or revised"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "c"
+      }
+    ]
+  },
+  {
+    "@id": "_:b112iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Poets and killers : a life in advertising"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Poets and killers"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/subtitle": [
+      {
+        "@value": "a life in advertising"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/contentTypes/txt",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Content"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "text"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/organizations/dlc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "DLC"
+      },
+      {
+        "@value": "DLC"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/rwo/agents/no2008131957",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Person"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hajnoczky, Helen."
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority": [
+      {
+        "@id": "http://id.loc.gov/authorities/names/no2008131957"
+      }
+    ]
+  },
+  {
+    "@id": "_:b52iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ClassificationLcc"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/classificationPortion": [
+      {
+        "@value": "PR9199.4.H3455"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/itemPortion": [
+      {
+        "@value": "P64 2010"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/descriptionConventions/aacr",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionConventions"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "aacr"
+      }
+    ]
+  },
+  {
+    "@id": "_:b175iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Local"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/marcauthen/lccopycat",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionAuthentication"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "lccopycat"
+      }
+    ]
+  },
+  {
+    "@id": "_:b133iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/GenerationProcess"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DLC marc2bibframe2 v1.7.0-SNAPSHOT"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2021-08-04T21:55:31-04:00"
+      }
+    ]
+  },
+  {
+    "@id": "_:b31iddOtlocdOtgovresourcesworks16625871",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ClassificationDdc"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/classificationPortion": [
+      {
+        "@value": "C811/.6"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/source": [
+      {
+        "@id": "_:b38iddOtlocdOtgovresourcesworks16625871"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/edition": [
+      {
+        "@value": "full"
+      }
+    ]
+  }
+]
