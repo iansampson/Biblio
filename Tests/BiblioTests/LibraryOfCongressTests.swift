@@ -19,6 +19,8 @@ final class LibraryOfCongressTests: XCTestCase {
         // Then
         XCTAssertNotNil(instance.responsibilityStatement)
         XCTAssertEqual(instance.identifiers.count, 3)
+        XCTAssertNotNil(instance.work)
+        print(instance)
     }
 }
 
