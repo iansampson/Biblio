@@ -7,6 +7,8 @@
 
 import Foundation
 
+// TODO: Consider nesting under LinkedData
+// or renaming to something simple like Library
 public final class LinkedDataService {
     let urlSession: URLSession
     
@@ -16,14 +18,34 @@ public final class LinkedDataService {
 }
 
 extension LinkedDataService {
-    public func instance(at url: URL) async throws -> Instance {
+    public func instance(atURL url: URL) async throws -> Instance {
         let (data, _) = try await urlSession.data(from: url)
         return try JSONDecoder().decode(Instance.self, from: data)
     }
     
-    public func work(at url: URL) async throws -> Work {
+    public func instance(withID id: String) async throws -> Instance {
+        guard let url = URL(string: "https://id.loc.gov/resources/instances")?
+                .appendingPathComponent(id)
+                .appendingPathExtension("json")
+        else {
+            fatalError()
+        }
+        return try await instance(atURL: url)
+    }
+    
+    public func work(atURL url: URL) async throws -> Work {
         let (data, _) = try await urlSession.data(from: url)
         return try JSONDecoder().decode(Work.self, from: data)
+    }
+    
+    public func work(withID id: String) async throws -> Work {
+        guard let url = URL(string: "https://id.loc.gov/resources/works")?
+                .appendingPathComponent(id)
+                .appendingPathExtension("json")
+        else {
+            fatalError()
+        }
+        return try await work(atURL: url)
     }
     
     public func work(for instance: Instance) async throws -> Work? {
@@ -36,3 +58,7 @@ extension LinkedDataService {
         return try JSONDecoder().decode(Work.self, from: data)
     }
 }
+
+// Consider making a more generic function such as:
+// func object<T>(_ T.self, at url: URL) async throws
+// and make T conform to some Bibframe-specific protocol

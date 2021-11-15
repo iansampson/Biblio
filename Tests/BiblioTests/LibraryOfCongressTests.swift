@@ -6,12 +6,34 @@
 //
 
 import XCTest
-@testable import LibraryOfCongress
+import LibraryOfCongress
 
 final class LibraryOfCongressTests: XCTestCase {
     func testSearch() async throws {
         let results = try await LinkedDataService().search("Walter Benjamin")
         XCTAssert(!results.isEmpty)
+    }
+    
+    func testRetrieveInstance() async throws {
+        // Given
+        let service = LinkedDataService()
+        
+        // When
+        let instance = try await service.instance(withID: "20953723")
+        
+        // Then
+        XCTAssertEqual(instance.title?.value, "Magyarázni")
+    }
+    
+    func testRetrieveWork() async throws {
+        // Given
+        let service = LinkedDataService()
+        
+        // When
+        let work = try await service.work(withID: "20953723")
+        
+        // Then
+        XCTAssertEqual(work.contributions.first?.roles, [.author, .illustrator])
     }
     
     func testDecodeInstance() throws {

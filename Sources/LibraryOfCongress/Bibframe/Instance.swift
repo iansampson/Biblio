@@ -11,7 +11,8 @@ import Foundation
 
 public struct Instance {
     public let type: InstanceType
-    public let identifiers: [IdentifierType: String]
+    // public let identifiers: [IdentifierType: String]
+    public let identifiers: [Identifier]
     public let work: URL? // Does every instance have a work?
     public let title: Title? // Consider a more complex struct for title parts
     public let variantTitle: Title? // Or making them strings
