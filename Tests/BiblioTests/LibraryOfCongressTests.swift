@@ -35,6 +35,7 @@ final class LibraryOfCongressTests: XCTestCase {
         let work = try JSONDecoder().decode(Work.self, from: data)
         
         // Then
+        XCTAssertEqual(work.type, .text)
         XCTAssertEqual(work.contributions.count, 2)
         XCTAssertEqual(work.contributions.first?.roles, [.author, .illustrator])
     }

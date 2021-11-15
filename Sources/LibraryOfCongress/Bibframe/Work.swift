@@ -8,6 +8,7 @@
 import Foundation
 
 struct Work {
+    let type: WorkType
     let contributions: [Contribution]
 }
 
@@ -17,7 +18,11 @@ extension Work: Decodable {
         let work = try document.decode(LinkedData.Work.self,
                                        withTypeName: "http://id.loc.gov/ontologies/bibframe/Work",
                                        idPrefix: "http://id.loc.gov/resources/works")
+        type = work.types?.compactMap(WorkType.init(rawValue:))
+            .filter { $0 != .unknown }
+            .first ?? .unknown
         
+        // TODO: Abstract into its own initializer
         self.contributions = try document
             .expand(work.contributions, into: LinkedData.Contribution.self)
             .compactMap {

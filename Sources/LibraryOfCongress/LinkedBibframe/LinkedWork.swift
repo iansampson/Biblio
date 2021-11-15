@@ -7,11 +7,13 @@
 
 extension LinkedData {
     struct Work: Decodable {
+        let types: [String]?
         let contributions: [Link]?
         // let languages: [Link]?
         
         enum CodingKeys: String, CodingKey {
             // case languages = "http://id.loc.gov/ontologies/bibframe/language"
+            case types = "@type"
             case contributions = "http://id.loc.gov/ontologies/bibframe/contribution"
         }
     }
