@@ -26,17 +26,7 @@ extension Instance: Decodable {
                                        withTypeName: "http://id.loc.gov/ontologies/bibframe/Instance",
                                        idPrefix: "http://id.loc.gov/resources/instances")
         
-        let identifiers: [(IdentifierType, String)] = try document.expand(instance.identifiers, into: Node.self)
-            .compactMap {
-                guard let value = $0.values?.first?.value?.trimmingCharacters(in: .whitespacesAndNewlines),
-                      let identifierTypeRawValue = $0.types?.first,
-                      let identifierType = IdentifierType(rawValue: identifierTypeRawValue)
-                else {
-                    return nil
-                }
-                return (identifierType, value)
-            }
-        self.identifiers = .init(uniqueKeysWithValues: identifiers)
+        identifiers = try .init(expanding: instance.identifiers, in: document)
         
         work = instance.works?.first?.id
             .flatMap(URL.init(string:))?
@@ -58,21 +48,6 @@ extension Instance: Decodable {
         
         responsibilityStatement = instance.responsibilityStatements?.first?.value
         
-        // TODO: Abstract into ProvisionActivity initializer
-        provisionActivity = try document.expand(instance.provisionActivity,
-                                                into: LinkedData.ProvisionActivity.self)
-            .lazy
-            .compactMap { activity -> ProvisionActivity? in
-                let place = try document.expand(activity.places, into: Node.self)
-                    .first?.labels?.first?.value
-                let agent = try Agent(expanding: activity.agents, in: document)
-                let date = activity.dates?.first?.value
-                return ProvisionActivity(place: place, agent: agent, date: date)
-            }
-            .sorted { (first, second) in
-                first.agent != nil && second.agent == nil
-            }
-            .first
-        // TODO: Find a better way to select which provision activity to use (or use both)
+        provisionActivity = try .init(expanding: instance.provisionActivity, in: document)
     }
 }
