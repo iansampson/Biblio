@@ -1,0 +1,511 @@
+[
+  {
+    "@id": "_:b112iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Place"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Frankfurt am Main"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/instances/1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Instance",
+      "http://id.loc.gov/ontologies/bibframe/Print"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/issuance": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/issuance/mono"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/provisionActivity": [
+      {
+        "@id": "_:b16iddOtlocdOtgovresourcesinstances1248711"
+      },
+      {
+        "@id": "_:b106iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/carrier": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/carriers/nc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/media": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/mediaTypes/n"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/identifiedBy": [
+      {
+        "@id": "_:b52iddOtlocdOtgovresourcesinstances1248711"
+      },
+      {
+        "@id": "_:b61iddOtlocdOtgovresourcesinstances1248711"
+      },
+      {
+        "@id": "_:b73iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Gesammelte Schriften"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/responsibilityStatement": [
+      {
+        "@value": "Walter Benjamin ; unter Mitwirkung von Theodor W. Adorno und Gershom Scholem hrsg. von Rolf Tiedemann und Hermann Schweppenhäuser"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/title": [
+      {
+        "@id": "_:b91iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/editionStatement": [
+      {
+        "@value": "1. Aufl"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/provisionActivityStatement": [
+      {
+        "@value": "Frankfurt am Main : Suhrkamp, 1972-1989."
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/extent": [
+      {
+        "@id": "_:b137iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/note": [
+      {
+        "@id": "_:b146iddOtlocdOtgovresourcesinstances1248711"
+      },
+      {
+        "@id": "_:b160iddOtlocdOtgovresourcesinstances1248711"
+      },
+      {
+        "@id": "_:b169iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/dimensions": [
+      {
+        "@value": "21 cm."
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@id": "http://id.loc.gov/resources/instances"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/instanceOf": [
+      {
+        "@id": "http://id.loc.gov/resources/works/1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/hasItem": [
+      {
+        "@id": "http://id.loc.gov/resources/items/1248711-050-11"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/adminMetadata": [
+      {
+        "@id": "_:b201iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/entities/agents/af0aeb0c9d0f75c323083f98526cbfec",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Suhrkamp"
+      }
+    ],
+    "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority": [
+      {
+        "@id": "http://id.loc.gov/entities/providers/af0aeb0c9d0f75c323083f98526cbfec"
+      }
+    ]
+  },
+  {
+    "@id": "_:b137iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Extent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "7 v. in 15"
+      }
+    ]
+  },
+  {
+    "@id": "_:b52iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Lccn"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "   72346544 "
+      }
+    ]
+  },
+  {
+    "@id": "_:b160iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Note"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Vol. 7 edited with the collaboration of Christoph Gödde, Henri Lonitz and Gary Smith."
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/countries/gw",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Place"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Germany"
+      }
+    ]
+  },
+  {
+    "@id": "_:b187iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ShelfMarkLcc"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "PT2603.E455 1972"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ]
+  },
+  {
+    "@id": "_:b201iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationProcess": [
+      {
+        "@id": "_:b205iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/status": [
+      {
+        "@id": "_:b217iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bflc/encodingLevel": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/menclvl/1"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionConventions": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/descriptionConventions/isbd"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/identifiedBy": [
+      {
+        "@id": "_:b247iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/changeDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "1990-06-18T13:38:46"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/creationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "1978-10-30"
+      }
+    ],
+    "http://id.loc.gov/ontologies/lclocal/d906": [
+      {
+        "@value": "=906     $a 7 $b cbc $c orignew $d 1 $e ncip $f 19 $g y-gencatlg"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/descriptionModifier": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/organizations/dlc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent",
+      "http://id.loc.gov/ontologies/bibframe/Agent"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "DLC"
+      },
+      {
+        "@value": "DLC"
+      },
+      {
+        "@value": "DLC"
+      }
+    ]
+  },
+  {
+    "@id": "_:b205iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/GenerationProcess"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DLC marc2bibframe2 v1.7.0-SNAPSHOT"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/generationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2021-08-04T20:58:38-04:00"
+      }
+    ]
+  },
+  {
+    "@id": "_:b16iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ProvisionActivity",
+      "http://id.loc.gov/ontologies/bibframe/Publication"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/date": [
+      {
+        "@type": "http://id.loc.gov/datatypes/edtf",
+        "@value": "1972/1989"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/place": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/countries/gw"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/mediaTypes/n",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Media"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "unmediated"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/descriptionConventions/isbd",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/DescriptionConventions"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isbd"
+      }
+    ]
+  },
+  {
+    "@id": "_:b247iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Local"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/assigner": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      }
+    ]
+  },
+  {
+    "@id": "_:b61iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Isbn"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "351857311X"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/qualifier": [
+      {
+        "@value": "v. 6"
+      }
+    ]
+  },
+  {
+    "@id": "_:b73iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Isbn"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "3518573233"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/qualifier": [
+      {
+        "@value": "v. 6 : pbk."
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/carriers/nc",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Carrier"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume"
+      }
+    ]
+  },
+  {
+    "@id": "_:b217iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Status"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "corrected or revised"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/code": [
+      {
+        "@value": "c"
+      }
+    ]
+  },
+  {
+    "@id": "_:b146iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Note",
+      ""
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ill."
+      }
+    ]
+  },
+  {
+    "@id": "_:b91iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Title"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Gesammelte Schriften"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/mainTitle": [
+      {
+        "@value": "Gesammelte Schriften"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/issuance/mono",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Issuance"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "monograph"
+      }
+    ]
+  },
+  {
+    "@id": "_:b169iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Note"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Includes index volume for vols. 1-4."
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/works/1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Work"
+    ],
+    "http://id.loc.gov/ontologies/bflc/aap": [
+      {
+        "@value": "Benjamin, Walter, 1892-1940. Gesammelte Schriften"
+      }
+    ]
+  },
+  {
+    "@id": "_:b106iddOtlocdOtgovresourcesinstances1248711",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/ProvisionActivity",
+      "http://id.loc.gov/ontologies/bibframe/Publication"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/place": [
+      {
+        "@id": "_:b112iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/agent": [
+      {
+        "@id": "http://id.loc.gov/entities/agents/af0aeb0c9d0f75c323083f98526cbfec"
+      }
+    ],
+    "http://id.loc.gov/ontologies/bibframe/date": [
+      {
+        "@value": "1972-1989"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/menclvl/1",
+    "@type": [
+      "http://id.loc.gov/ontologies/bflc/EncodingLevel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "full not examined"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/resources/items/1248711-050-11",
+    "@type": [
+      "http://id.loc.gov/ontologies/bibframe/Item"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/shelfMark": [
+      {
+        "@id": "_:b187iddOtlocdOtgovresourcesinstances1248711"
+      }
+    ]
+  }
+]

@@ -18,6 +18,8 @@ struct Instance {
     let responsibilityStatement: String?
     let provisionActivity: ProvisionActivity?
     let issuance: Issuance?
+    let extent: Extent?
+    let carrier: Carrier?
 }
 // TODO: Remove more Optionals if possible
 
@@ -57,5 +59,9 @@ extension Instance: Decodable {
         provisionActivity = try .init(expanding: instance.provisionActivity, in: document)
         
         issuance = try .init(expanding: instance.issuance, in: document)
+        
+        extent = try .init(expanding: instance.extent, in: document)
+        
+        carrier = try .init(expanding: instance.carrier, in: document)
     }
 }
