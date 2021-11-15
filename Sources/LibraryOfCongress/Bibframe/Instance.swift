@@ -39,6 +39,7 @@ extension Instance: Decodable {
         
         work = instance.works?.first?.id
             .flatMap(URL.init(string:))?
+            .appendingPathExtension("json")
             .secure
         
         // TODO: Abstract into Title initializer

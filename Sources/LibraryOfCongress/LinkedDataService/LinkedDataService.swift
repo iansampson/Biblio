@@ -67,8 +67,7 @@ extension LinkedDataService {
         guard let url = instance.work else {
             throw Error.expectedWorkPropertyOnInstance(instance)
         }
-        let (data, _) = try await urlSession.data(from: url)
-        return try JSONDecoder().decode(Work.self, from: data)
+        return try await work(atURL: url)
     }
 }
 

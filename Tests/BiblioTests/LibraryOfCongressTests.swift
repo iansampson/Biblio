@@ -25,12 +25,25 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(instance.title?.value, "Magyarázni")
     }
     
-    func testRetrieveWork() async throws {
+    func testRetrieveWorkWithID() async throws {
         // Given
         let service = LinkedDataService()
         
         // When
         let work = try await service.work(withID: "20953723")
+        
+        // Then
+        XCTAssertEqual(work.contributions.first?.roles, [.author, .illustrator])
+    }
+    
+    func testRetrieveWorkFromInstance() async throws {
+        // Given
+        let service = LinkedDataService()
+        let instance = try await service.instance(withID: "20953723")
+        
+        // When
+        // TODO: Consider renaming to from
+        let work = try await service.work(for: instance)
         
         // Then
         XCTAssertEqual(work.contributions.first?.roles, [.author, .illustrator])
