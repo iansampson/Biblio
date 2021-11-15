@@ -7,6 +7,7 @@
 
 extension LinkedData {
     struct Instance: Decodable {
+        let types: [String]?
         let identifiers: [Link]?
         let works: [Link]? // isInstanceOf
         let titles: [Link]?
@@ -14,6 +15,7 @@ extension LinkedData {
         let provisionActivity: [Link]?
         
         enum CodingKeys: String, CodingKey {
+            case types = "@type"
             case identifiers = "http://id.loc.gov/ontologies/bibframe/identifiedBy"
             case works = "http://id.loc.gov/ontologies/bibframe/instanceOf"
             case titles = "http://id.loc.gov/ontologies/bibframe/title"

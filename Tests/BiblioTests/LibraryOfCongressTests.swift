@@ -17,6 +17,7 @@ final class LibraryOfCongressTests: XCTestCase {
         let instance = try JSONDecoder().decode(Instance.self, from: data)
         
         // Then
+        XCTAssertEqual(instance.type, .print)
         XCTAssertEqual(instance.identifiers.count, 3)
         XCTAssertNotNil(instance.work)
         XCTAssertEqual(instance.title?.value, "Dani Karavan")

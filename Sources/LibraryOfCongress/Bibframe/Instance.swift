@@ -10,8 +10,9 @@ import Foundation
 // (only used for URL so far)
 
 struct Instance {
+    let type: InstanceType
     let identifiers: [IdentifierType: String]
-    let work: URL?
+    let work: URL? // Does every instance have a work?
     let title: Title? // Consider a more complex struct for title parts
     let variantTitle: Title? // Or making them strings
     let responsibilityStatement: String?
@@ -25,6 +26,10 @@ extension Instance: Decodable {
         let instance = try document.decode(LinkedData.Instance.self,
                                        withTypeName: "http://id.loc.gov/ontologies/bibframe/Instance",
                                        idPrefix: "http://id.loc.gov/resources/instances")
+        
+        type = instance.types?.compactMap(InstanceType.init(rawValue:))
+            .filter { $0 != .unknown }
+            .first ?? .unknown
         
         identifiers = try .init(expanding: instance.identifiers, in: document)
         
