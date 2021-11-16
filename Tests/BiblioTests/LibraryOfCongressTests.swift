@@ -96,6 +96,7 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(work.contributions.count, 2)
         XCTAssertEqual(work.contributions.first?.roles, [.author, .illustrator])
         XCTAssertEqual(work.contributions.map { $0.agent.name.components }, [["Helen", "Hajnoczky"], ["Susan L.", "Holbrook"]])
+        XCTAssertEqual(work.contributions.first?.agent.type, .person)
         XCTAssertEqual(work.languages, [.english])
     }
 }

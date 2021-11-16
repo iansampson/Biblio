@@ -29,11 +29,13 @@ extension LinkedData {
     }
     
     struct Agent: Decodable {
+        let types: [String]
         let names: [Property]
         let isIdentifiedByAuthorities: [Property]?
         // TODO: Consider making one or both of these properties optional
         
         enum CodingKeys: String, CodingKey {
+            case types = "@type"
             case names = "http://www.w3.org/2000/01/rdf-schema#label"
             case isIdentifiedByAuthorities = "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority"
         }

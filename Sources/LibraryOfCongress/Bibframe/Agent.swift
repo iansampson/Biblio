@@ -8,11 +8,10 @@
 import Foundation
 
 public struct Agent {
+    public let type: AgentType
     public let name: Name
     public let authority: URL?
 }
-// TODO: Specify type of agent
-// TODO: Make authority optional
 
 extension Agent {
     init?<L>(expanding agents: [L]?, in document: Document) throws where L: Linkable {
@@ -24,6 +23,11 @@ extension Agent {
         
         let authority = firstAgent.isIdentifiedByAuthorities?
             .first?.id.flatMap(URL.init(string:))
+        
+        self.type = firstAgent.types
+            .compactMap(AgentType.init(rawValue:))
+            .filter { $0 != .agent }
+            .first ?? .agent
         
         self.name = Name(agentName: name)
         self.authority = authority
