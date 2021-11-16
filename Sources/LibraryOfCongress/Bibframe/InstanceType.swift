@@ -11,5 +11,5 @@ public enum InstanceType: String {
     case archival = "http://id.loc.gov/ontologies/bibframe/Archival"
     case tactile = "http://id.loc.gov/ontologies/bibframe/Tactile"
     case electronic = "http://id.loc.gov/ontologies/bibframe/Electronic"
-    case unknown = "http://id.loc.gov/ontologies/bibframe/Instance"
+    case instance = "http://id.loc.gov/ontologies/bibframe/Instance"
 }

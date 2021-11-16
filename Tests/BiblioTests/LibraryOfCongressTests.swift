@@ -98,6 +98,8 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(work.contributions.map { $0.agent.name.components }, [["Helen", "Hajnoczky"], ["Susan L.", "Holbrook"]])
         XCTAssertEqual(work.contributions.first?.agent.type, .person)
         XCTAssertEqual(work.languages, [.english])
+        XCTAssertEqual(work.genreForms.first?.id.absoluteString, "http://id.loc.gov/authorities/genreForms/gf2014026481")
+        XCTAssertEqual(work.genreForms.first?.label, "poetry")
     }
 }
 

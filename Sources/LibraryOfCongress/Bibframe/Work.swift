@@ -11,6 +11,7 @@ public struct Work {
     public let type: WorkType
     public let contributions: [Contribution]
     public let languages: [Language]
+    public let genreForms: [GenreForm]
 }
 
 extension Work: Decodable {
@@ -20,8 +21,8 @@ extension Work: Decodable {
                                        withTypeName: "http://id.loc.gov/ontologies/bibframe/Work",
                                        idPrefix: "http://id.loc.gov/resources/works")
         type = work.types.compactMap(WorkType.init(rawValue:))
-            .filter { $0 != .unknown }
-            .first ?? .unknown
+            .filter { $0 != .work }
+            .first ?? .work
         
         // TODO: Abstract into its own initializer
         self.contributions = try document
@@ -37,5 +38,10 @@ extension Work: Decodable {
             }
         
         languages = .init(expanding: work.languages)
+        
+        genreForms = try .init(expanding: work.genreForms, in: document)
+        
+        
+        // TODO: Expand using names
     }
 }

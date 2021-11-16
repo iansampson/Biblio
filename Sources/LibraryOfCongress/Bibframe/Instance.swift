@@ -32,8 +32,8 @@ extension Instance: Decodable {
                                        idPrefix: "http://id.loc.gov/resources/instances")
         
         type = instance.types.compactMap(InstanceType.init(rawValue:))
-            .filter { $0 != .unknown }
-            .first ?? .unknown
+            .filter { $0 != .instance }
+            .first ?? .instance
         
         identifiers = try .init(expanding: instance.identifiers, in: document)
         

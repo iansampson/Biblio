@@ -19,5 +19,5 @@ public enum WorkType: String {
     case multimedia = "http://id.loc.gov/ontologies/bibframe/Multimedia"
     case mixedMaterial = "http://id.loc.gov/ontologies/bibframe/MixedMaterial"
     case arrangement = "http://id.loc.gov/ontologies/bibframe/Arrangement"
-    case unknown = "http://id.loc.gov/ontologies/bibframe/Work"
+    case work = "http://id.loc.gov/ontologies/bibframe/Work"
 }

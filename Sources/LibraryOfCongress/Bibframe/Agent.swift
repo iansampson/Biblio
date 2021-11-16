@@ -10,7 +10,8 @@ import Foundation
 public struct Agent {
     public let type: AgentType
     public let name: Name
-    public let authority: URL?
+    public let identifier: URL?
+    // Identifier in the Library of Congress Name Authority File
 }
 
 extension Agent {
@@ -21,7 +22,7 @@ extension Agent {
             return nil
         }
         
-        let authority = firstAgent.isIdentifiedByAuthorities?
+        let identifier = firstAgent.isIdentifiedByAuthorities?
             .first?.id.flatMap(URL.init(string:))
         
         self.type = firstAgent.types
@@ -30,6 +31,6 @@ extension Agent {
             .first ?? .agent
         
         self.name = Name(agentName: name)
-        self.authority = authority
+        self.identifier = identifier
     }
 }

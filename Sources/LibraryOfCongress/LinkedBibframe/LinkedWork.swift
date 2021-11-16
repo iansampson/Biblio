@@ -10,11 +10,13 @@ extension LinkedData {
         let types: [String]
         let contributions: [Link]?
         let languages: [Link]?
+        let genreForms: [Link]?
         
         enum CodingKeys: String, CodingKey {
             case types = "@type"
             case contributions = "http://id.loc.gov/ontologies/bibframe/contribution"
             case languages = "http://id.loc.gov/ontologies/bibframe/language"
+            case genreForms = "http://id.loc.gov/ontologies/bibframe/genreForm"
         }
     }
     
