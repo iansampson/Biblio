@@ -43,7 +43,7 @@ extension CrossRef {
         
         public struct Message: Codable {
             public let totalResults: Int
-            public let items: [Item]?
+            public let items: [Work]?
         }
     }
 }

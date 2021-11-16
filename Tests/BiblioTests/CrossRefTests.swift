@@ -18,7 +18,7 @@ final class CrossRefTests: XCTestCase {
         decoder.dateDecodingStrategy = .iso8601
         
         // When
-        let item = try decoder.decode(Item.self, from: data)
+        let item = try decoder.decode(Work.self, from: data)
         
         // Then
         dump(item)

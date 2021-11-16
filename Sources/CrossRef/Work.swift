@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  Work.swift
 //  
 //
 //  Created by Ian Sampson on 2021-11-15.
@@ -7,20 +7,24 @@
 
 import Foundation
 
-public struct Item: Codable {
+public struct Work: Codable {
     public let title: [String]?
     public let subtitle: [String]?
     public let containerTitle: [String]?
     public let shortContainerTitle: [String]?
-    public let author: [Person]?
+    
+    public let author: [Author]?
+    public let editor: [Author]?
+    public let translator: [Author]?
+    
     public let type: ItemType?
     public let doi: String?
-    public let created: Date?
-    public let issued: Date?
-    public let published: Date?
-    public let publishedPrint: Date?
-    public let deposited: Date
-    public let indexed: Date?
+    public let created: DateParts?
+    public let issued: DateParts?
+    public let published: DateParts?
+    public let publishedPrint: DateParts?
+    public let deposited: DateParts
+    public let indexed: DateParts?
     public let subject: [String]?
     public let url: URL?
     public let issn: [String]? // or ISSN?
@@ -43,6 +47,8 @@ public struct Item: Codable {
     public let publisher: String?   
 }
 
+// TODO: Consider name-spacing under Work
+// (the docs have WorkISSNType)
 public struct ISSNType: Codable {
     public let value: String
     public let type: String
@@ -52,5 +58,5 @@ public struct ISSNType: Codable {
 
 public struct JournalIssue: Codable {
     public let issue: String
-    public let publishedPrint: Date
+    public let publishedPrint: DateParts
 }
