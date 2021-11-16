@@ -8,18 +8,22 @@ let package = Package(
     platforms: [.iOS(.v15), .macOS(.v12)],
     products: [
         .library(name: "Biblio",
-                 targets: ["Biblio"]),
-    ],
+                 targets: ["Biblio"]),],
     dependencies: [
         .package(name: "FeedKit",
                  url: "https://github.com/nmdias/FeedKit",
-                 branch: "master")],
+                 branch: "master"),
+        .package(name: "LetterCase",
+                 url: "https://github.com/rwbutler/LetterCase",
+                 from: .init(1, 0, 0))],
     targets: [
         .target(name: "LibraryOfCongress",
                 dependencies: ["FeedKit"]),
         .target(name: "GoogleBooks"),
+        .target(name: "CrossRef",
+               dependencies: ["LetterCase"]),
         .target(name: "Biblio",
-                dependencies: ["LibraryOfCongress", "GoogleBooks"]),
+                dependencies: ["LibraryOfCongress", "GoogleBooks", "CrossRef"]),
         .testTarget(name: "BiblioTests",
                     dependencies: ["Biblio"],
                     resources: [.process("Resources")])

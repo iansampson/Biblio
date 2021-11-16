@@ -9,6 +9,15 @@
           "revision": "6b03f2e9c18c578fe577c434784772efcfd34a9e",
           "version": null
         }
+      },
+      {
+        "package": "LetterCase",
+        "repositoryURL": "https://github.com/rwbutler/LetterCase",
+        "state": {
+          "branch": null,
+          "revision": "03589da8c6554655b276ba187cfc1cd35ad711d2",
+          "version": "1.6.1"
+        }
       }
     ]
   },
