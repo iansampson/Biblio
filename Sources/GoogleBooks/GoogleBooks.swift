@@ -64,6 +64,13 @@ public struct GoogleVolume: Codable {
         public let identifier: String // actually a number
     }
     
+    // TODO: Add more identifiers before using this enum
+    // for Identifier.type
+    public enum IdentifierType: String, Codable {
+        case isbn10 = "ISBN_10"
+        case isbn13 = "ISBN_13"
+    }
+    
     //let kind: String
     public let id: String
     public let volumeInfo: Info
@@ -80,7 +87,7 @@ extension GoogleVolume.ImageLinks {
         return uncurled
     }
     
-    private var uncurled: GoogleVolume.ImageLinks {
+    public var uncurled: GoogleVolume.ImageLinks {
         GoogleVolume.ImageLinks(smallThumbnail: smallThumbnail.map { removePageCurl(in: $0) },
                                 thumbnail: thumbnail.map { removePageCurl(in: $0) })
     }

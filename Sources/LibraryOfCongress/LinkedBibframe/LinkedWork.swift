@@ -30,7 +30,7 @@ extension LinkedData {
     
     struct Agent: Decodable {
         let names: [Property]
-        let isIdentifiedByAuthorities: [Property]
+        let isIdentifiedByAuthorities: [Property]?
         // TODO: Consider making one or both of these properties optional
         
         enum CodingKeys: String, CodingKey {

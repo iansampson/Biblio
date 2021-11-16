@@ -69,6 +69,21 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(instance.carrier, .volume)
     }
     
+    func testDecodeInstanceWithoutAgentAuthority() throws {
+        // Given
+        let data = try Data(name: "instances16625871", extension: "json")
+        
+        // When
+        let instance = try JSONDecoder().decode(Instance.self, from: data)
+        
+        // Then
+        // TODO: Consider changing Name struct to ProperName or PersonalName
+        // and using a simple string or a more generic Name type for publishers
+        // (also, check whether there’s a property ID telling us whether this is a person
+        // or not)
+        XCTAssertEqual(instance.provisionActivity?.agent?.name.components.first, "Snare Books")
+    }
+    
     func testDecodeWork() throws {
         // Given
         let data = try Data(name: "20953723", extension: "json")

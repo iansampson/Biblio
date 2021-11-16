@@ -17,11 +17,13 @@ public struct Agent {
 extension Agent {
     init?<L>(expanding agents: [L]?, in document: Document) throws where L: Linkable {
         guard let firstAgent = try document.expand(agents, into: LinkedData.Agent.self).first,
-              let name = firstAgent.names.first?.value,
-              let authority = firstAgent.isIdentifiedByAuthorities.first?.id.flatMap(URL.init(string:))
+              let name = firstAgent.names.first?.value
         else {
             return nil
         }
+        
+        let authority = firstAgent.isIdentifiedByAuthorities?
+            .first?.id.flatMap(URL.init(string:))
         
         self.name = Name(agentName: name)
         self.authority = authority
