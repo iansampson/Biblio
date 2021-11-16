@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Agent {
-    public let name: String
-    public let authority: URL
+    public let name: Name
+    public let authority: URL?
 }
 // TODO: Specify type of agent
 // TODO: Make authority optional
@@ -23,7 +23,7 @@ extension Agent {
             return nil
         }
         
-        self.name = name
+        self.name = Name(agentName: name)
         self.authority = authority
     }
 }
