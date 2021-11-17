@@ -21,6 +21,6 @@ final class CrossRefTests: XCTestCase {
         let item = try decoder.decode(Work.self, from: data)
         
         // Then
-        dump(item)
+        XCTAssertEqual(item.title.first, "Subject index")
     }
 }

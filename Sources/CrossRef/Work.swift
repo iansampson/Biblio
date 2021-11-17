@@ -8,7 +8,9 @@
 import Foundation
 
 public struct Work: Codable {
-    public let title: [String]?
+    public let type: ItemType
+    
+    public let title: [String]
     public let subtitle: [String]?
     public let containerTitle: [String]?
     public let shortContainerTitle: [String]?
@@ -16,35 +18,39 @@ public struct Work: Codable {
     public let author: [Author]?
     public let editor: [Author]?
     public let translator: [Author]?
+    public let publisher: String?
     
-    public let type: ItemType?
-    public let doi: String?
-    public let created: DateParts?
-    public let issued: DateParts?
-    public let published: DateParts?
-    public let publishedPrint: DateParts?
-    public let deposited: DateParts
-    public let indexed: DateParts?
+    public let language: String?
     public let subject: [String]?
-    public let url: URL?
+    
+    public let doi: String
+    public let url: URL
     public let issn: [String]? // or ISSN?
     public let issnType: [ISSNType]?
     public let alternativeId: [String]?
-    public let journalIssue: JournalIssue?
-    public let referencesCount: Int?
-    public let score: Double? // ?
-    public let link: [Link]? // TODO: Consider renaming to links (and adding a coding key)
-    public let language: String?
-    // TODO: Use an enum
-    public let member: String?
+    public let source: String
+    
+    public let created: DateParts
+    public let issued: DateParts
+    public let published: DateParts?
+    public let publishedPrint: DateParts?
+    public let posted: DateParts?
+    public let deposited: DateParts
+    public let indexed: DateParts?
+    
+    public let page: String? // TODO: Consider parsing
     public let issue: String?
     public let volume: String?
-    public let prefix: String?
-    public let isReferencedByCount: Int?
-    public let source: String?
-    public let page: String? // TODO: Consider parsing
+    public let journalIssue: JournalIssue?
+    
+    public let isReferencedByCount: Int
+    public let referencesCount: Int
+    public let score: Double // ?
+    public let link: [Link]? // TODO: Consider renaming to links (and adding a coding key)
+    
+    public let prefix: String
+    public let member: String
     // public let contentDomain: ContentDomain?
-    public let publisher: String?   
 }
 
 // TODO: Consider name-spacing under Work
