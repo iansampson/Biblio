@@ -1,5 +1,5 @@
 //
-//  MetadataCrawler.swift
+//  Crawler.swift
 //  
 //
 //  Created by Ian Sampson on 2021-11-18.
@@ -8,17 +8,17 @@
 import Foundation
 import CrossRef
 
-final class MetadataCrawler {
+public final class MetadataCrawler {
     let urlSession: URLSession
     
-    init(urlSession: URLSession) {
+    public init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
     
     // TODO: When resolving a CoAccess reference
     // distinguish the primary result from relations with an enum property
-    func metadata(atURL url: URL) -> TaskStream<MetadataParser.Parse> {
-        return TaskStream<MetadataParser.Parse> { [weak urlSession] taskGroup in
+    public func metadata(atURL url: URL) -> TaskStream<Metadata> {
+        return TaskStream<Metadata> { [weak urlSession] taskGroup in
             guard let url = url.secure else {
                 fatalError()
             }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-extension MetadataParser {
-    struct Image {
-        let tag: String
-        let url: URL
+extension Metadata {
+    public struct Image {
+        public let tag: String
+        public let url: URL
         
-        private init?(attributeKey key: String, element: HTMLDocument.Element, context: Context) {
+        private init?(attributeKey key: String, element: Document.Element, context: MetadataParser.Context) {
             guard element.name == "img" else {
                 return nil
             }
@@ -91,7 +91,7 @@ extension MetadataParser {
             self.url = url
         }
         
-        init?(_ element: HTMLDocument.Element, context: Context) {
+        init?(_ element: Document.Element, context: MetadataParser.Context) {
             if let image = Self.init(attributeKey: "id", element: element, context: context)
                 ?? Self.init(attributeKey: "class", element: element, context: context) {
                 self = image

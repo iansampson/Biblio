@@ -8,6 +8,7 @@
 import XCTest
 @testable import Biblio
 @testable import CrossRef
+import Metadata
 
 final class BiblioTests: XCTestCase {
     func testSearch() async throws {

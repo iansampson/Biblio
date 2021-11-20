@@ -1,5 +1,5 @@
 //
-//  HTMLDocument.swift
+//  Document.swift
 //  
 //
 //  Created by Ian Sampson on 2021-11-18.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftSoup
 
-struct HTMLDocument {
+struct Document {
     private let base: SwiftSoup.Document
     
     var html: Element {
@@ -38,7 +38,7 @@ struct HTMLDocument {
             try? base.text()
         }
         
-        typealias Elements = LazyMapSequence<LazySequence<SwiftSoup.Elements>.Elements, HTMLDocument.Element>
+        typealias Elements = LazyMapSequence<LazySequence<SwiftSoup.Elements>.Elements, Document.Element>
         
         var children: Elements {
             base.children().lazy.map(Element.init)
@@ -75,12 +75,12 @@ struct HTMLDocument {
     }
     
     final class EventIterator: IteratorProtocol {
-        let element: HTMLDocument.Element
-        var iterator: HTMLDocument.Element.Elements.Iterator? = nil
+        let element: Document.Element
+        var iterator: Document.Element.Elements.Iterator? = nil
         var childIterator: EventIterator? = nil
         var elementIsClosed = false
         
-        init(element: HTMLDocument.Element) {
+        init(element: Document.Element) {
             self.element = element
         }
         
@@ -115,8 +115,8 @@ struct HTMLDocument {
     }
 }
 
-extension HTMLDocument.Element {
-    var events: HTMLDocument.EventSequence {
+extension Document.Element {
+    var events: Document.EventSequence {
         .init(element: self)
     }
 }

@@ -5,18 +5,18 @@
 //  Created by Ian Sampson on 2021-11-19.
 //
 
-extension MetadataParser {
-    struct ISBN {
+extension Metadata {
+    public struct ISBN {
         // let type
         // TODO: Add source (e.g. metadata, body tag, label)
         // TODO: Add type (print, electronic, etc. where available)
-        let value: String
+        public let value: String
         
         init(_ value: String) {
             self.value = value
         }
         
-        init?(_ element: HTMLDocument.Element) {
+        init?(_ element: Document.Element) {
             var isLabeledISBN: Bool {
                 if let id = element.attributes["id"] {
                     if id.lowercased().contains("isbn") { return true }

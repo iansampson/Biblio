@@ -18,10 +18,7 @@ let package = Package(
                  from: .init(1, 0, 0)),
         .package(name: "SwiftSoup",
                  url: "https://github.com/scinfu/SwiftSoup.git",
-                 from: "1.7.4"),
-        .package(name: "Fuzi",
-                 url: "https://github.com/cezheng/Fuzi",
-                 from: "3.1.3")
+                 from: "1.7.4")
     ],
     targets: [
         .target(name: "LibraryOfCongress",
@@ -29,8 +26,10 @@ let package = Package(
         .target(name: "GoogleBooks"),
         .target(name: "CrossRef",
                dependencies: ["LetterCase"]),
+        .target(name: "Metadata",
+               dependencies: ["SwiftSoup"]),
         .target(name: "Biblio",
-                dependencies: ["SwiftSoup", "Fuzi", "LibraryOfCongress", "GoogleBooks", "CrossRef"]),
+                dependencies: ["LibraryOfCongress", "GoogleBooks", "CrossRef", "Metadata"]),
         .testTarget(name: "BiblioTests",
                     dependencies: ["Biblio"],
                     resources: [.process("Resources")])
