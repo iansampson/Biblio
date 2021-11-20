@@ -29,29 +29,44 @@ extension Provision {
     }
 }
 
+extension Work {
+    init(_ work: LibraryOfCongress.Work) {
+        self.type = work.type
+        self.contributors = work.contributions.map {
+            .init(agent: .init($0.agent), roles: $0.roles)
+        }
+        self.languages = work.languages
+        self.genreForms = work.genreForms
+    }
+}
+
 extension Instance {
     init(instance: LibraryOfCongress.Instance, work: LibraryOfCongress.Work) {
+        type = instance.type
+        
         identifiers = instance.identifiers.map {
             .init(type: $0.type, value: $0.value)
-        }
-        
-        contributors = work.contributions.map {
-            .init(agent: .init($0.agent), roles: $0.roles)
         }
         
         provisions = instance.provisionActivity
             .map(Provision.init)
             .map { [$0] } ?? []
         
+        issuance = instance.issuance
+        
+        carrier = instance.carrier
+        
         title = instance.title.map {
             .init(primaryTitle: $0.value,
                       subtitle: instance.variantTitle?.value,
-                      abbreviatedTitle: nil)
+                  abbreviatedTitle: nil)
         }
         
-        languages = work.languages
+        self.work = .init(work)
         
         container = nil
         // TODO: Parse Bibframe isPartOf
+        
+        images = []
     }
 }

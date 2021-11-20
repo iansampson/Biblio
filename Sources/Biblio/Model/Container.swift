@@ -7,8 +7,8 @@
 
 struct Container {
     let identifiers: [Instance.Identifier]
-    let title: Title
-    let locator: [Locator]
+    let title: Title?
+    let locators: [Locator]
 }
 
 struct Locator {

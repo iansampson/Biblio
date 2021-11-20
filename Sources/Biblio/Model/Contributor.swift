@@ -13,23 +13,3 @@ struct Contributor {
     
     typealias Role = Relator
 }
-
-struct Agent {
-    let type: AgentType
-    let identifiers: [Identifier]
-    let name: Name
-}
-
-extension Agent {
-    typealias AgentType = LibraryOfCongress.AgentType
-    
-    struct Identifier {
-        let type: IdentifierType
-        let value: String
-    }
-    
-    enum IdentifierType {
-        case orcid
-        case lcnaf
-    }
-}

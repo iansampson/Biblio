@@ -8,27 +8,18 @@
 import LibraryOfCongress
 
 struct Instance {
-    // work type
-    // instance type
-    // genre
-    // carrier
-    // issuance
-    let identifiers: [Identifier]
-    let contributors: [Contributor] // contributions?
+    let identifiers: [Identifier] // dictionary?
+    let type: InstanceType
+    let carrier: Carrier? // medium
+    let issuance: Issuance?
     let provisions: [Provision] // provisionActivities?
     let title: Title?
-    let languages: [Language] // Languages
-    // TODO: Identify a primary language
-    let container: Container? // isPartOf
-    // let work (isInstanceOf)
+    let work: Work?
+    let container: Container?
+    let images: [Image]
 }
 
 extension Instance {
-    typealias IdentifierType = LibraryOfCongress.IdentifierType
-    // TODO: Consider namespacing IdentifierType under Bibframe
-    
-    typealias Language = LibraryOfCongress.Language
-    
     struct Identifier {
         let type: IdentifierType
         let value: String
