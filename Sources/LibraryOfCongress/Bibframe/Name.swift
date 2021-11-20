@@ -23,6 +23,7 @@ extension Name {
             .map {
                 $0.removingParantheticalClauses
                     .trimmingCharacters(in: .whitespacesAndNewlines)
+                    .trimmingCharacters(in: .punctuationCharacters)
             }
         self.components = Array(components)
         // TODO: Remove anything in parantheses

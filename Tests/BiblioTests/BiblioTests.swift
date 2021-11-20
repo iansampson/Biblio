@@ -8,10 +8,11 @@
 import XCTest
 @testable import Biblio
 @testable import CrossRef
+import LibraryOfCongress
 import Metadata
 
 final class BiblioTests: XCTestCase {
-    func testSearch() async throws {
+    /*func testSearch() async throws {
         // Given
         let library = Library()
         
@@ -20,7 +21,7 @@ final class BiblioTests: XCTestCase {
         
         // Then
         print(instances)
-    }
+    }*/
     
     func testMetadataClient() async throws {
         // Given
@@ -37,5 +38,22 @@ final class BiblioTests: XCTestCase {
         for try await result in stream {
             print(result)
         }
+    }
+    
+    func testConstructInstanceFromBibframe() throws {
+        // Given
+        let decoder = JSONDecoder()
+        let workData = try Data(name: "16625871", extension: "json")
+        let instanceData = try Data(name: "instances16625871", extension: "json")
+        let bibframeWork = try decoder.decode(LibraryOfCongress.Work.self, from: workData)
+        let bibframeInstance = try decoder.decode(LibraryOfCongress.Instance.self, from: instanceData)
+        
+        // When
+        let instance = Biblio.Instance(instance: bibframeInstance, work: bibframeWork)
+        
+        // Then
+        dump(instance)
+        
+        // TODO: Remove period when parsing name
     }
 }
