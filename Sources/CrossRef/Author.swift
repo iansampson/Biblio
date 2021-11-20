@@ -9,7 +9,7 @@ public struct Author: Codable {
     public let orcid: String?
     public let suffix: String?
     public let given: String?
-    public let family: String
+    public let family: String?
     public let affiliation: [Affiliation]
     public let name: String?
     public let authenticatedOrcid: Bool?

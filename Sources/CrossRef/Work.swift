@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Work: Codable {
-    public let type: ItemType
+    public let type: WorkType
     
     public let title: [String]
     public let subtitle: [String]?
@@ -19,6 +19,7 @@ public struct Work: Codable {
     public let editor: [Author]?
     public let translator: [Author]?
     public let publisher: String?
+    public let publisherLocation: String?
     
     public let language: String?
     public let subject: [String]?
@@ -36,7 +37,7 @@ public struct Work: Codable {
     public let publishedPrint: DateParts?
     public let posted: DateParts?
     public let deposited: DateParts
-    public let indexed: DateParts?
+    public let indexed: DateParts
     
     public let page: String? // TODO: Consider parsing
     public let issue: String?
@@ -62,7 +63,9 @@ public struct ISSNType: Codable {
     // if you can find a list of values
 }
 
+// Or WorkJournalIssue in the API docs
 public struct JournalIssue: Codable {
     public let issue: String
-    public let publishedPrint: DateParts
+    public let publishedPrint: DateParts?
+    public let publishedOnline: DateParts?
 }

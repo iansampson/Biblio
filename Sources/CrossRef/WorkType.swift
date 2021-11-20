@@ -7,7 +7,7 @@
 
 import LetterCase
 
-public enum ItemType: String {
+public enum WorkType: String {
     case book
     case bookChapter
     case bookPart
@@ -38,7 +38,7 @@ public enum ItemType: String {
     case standardSeries
 }
 
-extension ItemType: Codable {
+extension WorkType: Codable {
     public init(from decoder: Decoder) throws {
         let string = try String(from: decoder)
         guard let type = Self.init(rawValue: string.convert(from: .kebab, to: .lowerCamel)) else {

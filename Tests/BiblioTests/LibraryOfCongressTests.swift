@@ -109,7 +109,7 @@ enum TestError: Error {
 
 extension Data {
     init(name: String, extension: String) throws {
-        guard let url = Bundle.module.url(forResource: name, withExtension: "json") else {
+        guard let url = Bundle.module.url(forResource: name, withExtension: `extension`) else {
             throw TestError.missingTestData
         }
         try self.init(contentsOf: url)

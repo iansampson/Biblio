@@ -15,7 +15,14 @@ let package = Package(
                  branch: "master"),
         .package(name: "LetterCase",
                  url: "https://github.com/rwbutler/LetterCase",
-                 from: .init(1, 0, 0))],
+                 from: .init(1, 0, 0)),
+        .package(name: "SwiftSoup",
+                 url: "https://github.com/scinfu/SwiftSoup.git",
+                 from: "1.7.4"),
+        .package(name: "Fuzi",
+                 url: "https://github.com/cezheng/Fuzi",
+                 from: "3.1.3")
+    ],
     targets: [
         .target(name: "LibraryOfCongress",
                 dependencies: ["FeedKit"]),
@@ -23,7 +30,7 @@ let package = Package(
         .target(name: "CrossRef",
                dependencies: ["LetterCase"]),
         .target(name: "Biblio",
-                dependencies: ["LibraryOfCongress", "GoogleBooks", "CrossRef"]),
+                dependencies: ["SwiftSoup", "Fuzi", "LibraryOfCongress", "GoogleBooks", "CrossRef"]),
         .testTarget(name: "BiblioTests",
                     dependencies: ["Biblio"],
                     resources: [.process("Resources")])
