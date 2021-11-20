@@ -6,7 +6,6 @@
 //
 
 import Foundation
-// import Fuzi
 import SwiftSoup
 
 struct HTMLDocument {

@@ -1,11 +1,11 @@
 //
-//  File.swift
+//  Parse.swift
 //  
 //
 //  Created by Ian Sampson on 2021-11-17.
 //
 
-import Foundation
+/*import Foundation
 import SwiftSoup
 import LetterCase
 
@@ -424,3 +424,4 @@ extension HTML {
         return URL(string: urlString)
     }
 }
+*/

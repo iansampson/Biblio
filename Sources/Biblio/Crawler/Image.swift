@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension HTMLMetadata {
+extension MetadataParser {
     struct Image {
         let tag: String
         let url: URL

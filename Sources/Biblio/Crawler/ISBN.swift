@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-19.
 //
 
-extension HTMLMetadata {
+extension MetadataParser {
     struct ISBN {
         // let type
         // TODO: Add source (e.g. metadata, body tag, label)

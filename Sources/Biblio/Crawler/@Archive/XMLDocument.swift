@@ -5,7 +5,7 @@
 //  Created by Ian Sampson on 2021-11-18.
 //
 
-import Foundation
+/*import Foundation
 
 struct XMLDocument {
     private let data: Data
@@ -101,4 +101,4 @@ extension XMLDocument.Parser {
             
         }
     }
-}
+}*/

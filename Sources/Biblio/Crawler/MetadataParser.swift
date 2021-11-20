@@ -1,5 +1,5 @@
 //
-//  HTMLMetadata.swift
+//  MetadataParser.swift
 //  
 //
 //  Created by Ian Sampson on 2021-11-18.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HTMLMetadata {
+struct MetadataParser {
     struct Parse {
         let url: URL
         var isbns: [ISBN]
