@@ -60,7 +60,7 @@ public struct GoogleVolume: Codable {
     }
     
     public struct Identifier: Codable {
-        public let type: String // make this an enum
+        public let type: IdentifierType // make this an enum
         public let identifier: String // actually a number
     }
     
@@ -69,6 +69,8 @@ public struct GoogleVolume: Codable {
     public enum IdentifierType: String, Codable {
         case isbn10 = "ISBN_10"
         case isbn13 = "ISBN_13"
+        case issn = "ISSN"
+        case other = "OTHER"
     }
     
     //let kind: String

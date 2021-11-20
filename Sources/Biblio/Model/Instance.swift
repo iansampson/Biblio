@@ -8,7 +8,7 @@
 import LibraryOfCongress
 
 struct Instance {
-    let identifiers: [Identifier] // dictionary?
+    var identifiers: [Identifier] // dictionary?
     let type: InstanceType
     let carrier: Carrier? // medium
     let issuance: Issuance?
@@ -16,11 +16,11 @@ struct Instance {
     let title: Title?
     let work: Work?
     let container: Container?
-    let images: [Image]
+    var images: [Image]
 }
 
 extension Instance {
-    struct Identifier {
+    struct Identifier: Hashable {
         let type: IdentifierType
         let value: String
     }
