@@ -187,7 +187,7 @@ extension Array where Element == Contributor {
     init(authors: [Author]?, role: Contributor.Role) {
         self = authors?.lazy
             .compactMap(Agent.init)
-            .compactMap { Contributor(agent: $0, roles: [.translator]) } ?? []
+            .compactMap { Contributor(agent: $0, roles: [role]) } ?? []
     }
 }
 

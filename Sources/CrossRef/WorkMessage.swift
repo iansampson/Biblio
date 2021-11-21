@@ -11,3 +11,10 @@ public struct WorksMessage: Codable {
     public let messageVersion: String
     public let message: Works
 }
+
+public struct WorkMessage: Codable {
+    public let status: String
+    public let messageType: String
+    public let messageVersion: String
+    public let message: Work
+}

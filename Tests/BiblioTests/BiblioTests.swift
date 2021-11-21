@@ -83,4 +83,15 @@ final class BiblioTests: XCTestCase {
         // Then
         dump(instance)
     }
+    
+    func testRetrieveInstanceWithDOI() async throws {
+        // Given
+        let service = Biblio.Service(urlSession: .shared)
+        
+        // When
+        let instance = try await service.instance(withDOI: "10.1086/715986")
+        
+        // Then
+        dump(instance)
+    }
 }

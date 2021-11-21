@@ -23,4 +23,15 @@ final class CrossRefTests: XCTestCase {
         // Then
         XCTAssertEqual(item.title.first, "Subject index")
     }
+    
+    func testRetrieveWorkWithDOI() async throws {
+        // Given
+        let service = Service(urlSession: .shared)
+        
+        // When
+        let work = try await service.work(withDOI: "10.1037/0003-066X.59.1.29")
+        
+        // Then
+        XCTAssertNotNil(work)
+    }
 }

@@ -8,6 +8,8 @@
 import Foundation
 import LibraryOfCongress
 import GoogleBooks
+import CrossRef
+import Metadata
 
 final class Service {
     let urlSession: URLSession
@@ -42,6 +44,19 @@ final class Service {
             instance.merge(googleVolume)
         }
         return instance
+    }
+    
+    func instance(withDOI doi: String) async throws -> Instance? {
+        let crossRef = CrossRef.Service(urlSession: urlSession)
+        guard let work = try await crossRef.work(withDOI: doi) else {
+            return nil
+        }
+        var instance = Instance(work)
+        for try await metadata in MetadataCrawler(urlSession: urlSession).metadata(atURL: work.url) {
+            instance.merge(metadata)
+        }
+        return instance
+        // TODO: Construct URL with DOI and search earlier (i.e. in parallel)
     }
 }
 

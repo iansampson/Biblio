@@ -32,6 +32,7 @@ public enum SearchableWorkType: String {
 extension Service {
     private static let works = "https://api.crossref.org/works"
     
+    // TODO: Consider returning the Works directly (or even just an array of Work)
     public func search(_ query: String, type: WorkType? = nil) async throws -> WorksMessage {
         // Construct URL
         var components = URLComponents(string: Self.works)!
@@ -58,5 +59,24 @@ extension Service {
         decoder.dateDecodingStrategy = .iso8601
         
         return try decoder.decode(WorksMessage.self, from: data)
+    }
+    
+    public func work(withDOI doi: String) async throws -> Work? {
+        guard let url = URL(string: "https://api.crossref.org/works/")?.appendingPathComponent(doi) else {
+            fatalError()
+        }
+        
+        // Request data
+        let (data, response) = try await urlSession.data(from: url)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw URLError.init(.badServerResponse)
+            // TODO: Throw a custom error here and include message from the server
+        }
+        
+        // Decode data
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromKebabCase
+        decoder.dateDecodingStrategy = .iso8601
+        return try decoder.decode(WorkMessage.self, from: data).message
     }
 }
