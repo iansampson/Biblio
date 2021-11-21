@@ -28,6 +28,6 @@ extension Locator {
     
     struct Range {
         let lowerBound: String
-        let upperBound: String
+        let upperBound: String?
     }
 }

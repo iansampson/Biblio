@@ -8,7 +8,7 @@
 import Foundation
 import LetterCase
 
-public final class CrossRef {
+public final class Service {
     let urlSession: URLSession
     
     public init(urlSession: URLSession = .shared) {
@@ -29,12 +29,12 @@ public enum SearchableWorkType: String {
     case report = "Report"
 }
 
-extension CrossRef {
+extension Service {
     private static let works = "https://api.crossref.org/works"
     
     public func search(_ query: String, type: WorkType? = nil) async throws -> WorksMessage {
         // Construct URL
-        var components = URLComponents(string: CrossRef.works)!
+        var components = URLComponents(string: Self.works)!
         components.queryItems = [
             .init(name: "query", value: query)
         ]

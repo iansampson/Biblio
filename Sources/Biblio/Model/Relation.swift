@@ -60,3 +60,6 @@ enum RelationType {
 // references
 // original / derivative/translation
 // part
+
+// review
+// (not in Bibframe, although they have another property for this)

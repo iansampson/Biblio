@@ -10,6 +10,7 @@ import XCTest
 @testable import CrossRef
 import LibraryOfCongress
 import Metadata
+import LetterCase
 
 final class BiblioTests: XCTestCase {
     /*func testSearch() async throws {
@@ -25,7 +26,7 @@ final class BiblioTests: XCTestCase {
     
     func testMetadataClient() async throws {
         // Given
-        let crossRef = CrossRef()
+        let crossRef = CrossRef.Service()
         let response = try await crossRef.search("Marjorie Perloff", type: .journalArticle)
         let urls = response.message.items?.map { $0.url } ?? []
         let metadataCrawler = MetadataCrawler(urlSession: .shared)
@@ -55,5 +56,20 @@ final class BiblioTests: XCTestCase {
         dump(instance)
         
         // TODO: Remove period when parsing name
+    }
+    
+    func testConstructInstanceFromCrossRef() throws {
+        // Given
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromKebabCase
+        decoder.dateDecodingStrategy = .iso8601
+        let crossRefData = try Data(name: "0008-6215(90)84065-3", extension: "json")
+        let crossRefWork = try decoder.decode(CrossRef.Work.self, from: crossRefData)
+        
+        // When
+        let instance = Biblio.Instance(crossRefWork)
+        
+        // Then
+        dump(instance)
     }
 }
