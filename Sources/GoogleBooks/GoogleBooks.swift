@@ -16,12 +16,19 @@ public final class GoogleBooks {
     
     private static let volumes = "https://www.googleapis.com/books/v1/volumes"
     
-    public func search(_ query: String) async throws -> GoogleBooksResult {
+    public func search(for query: String, field: Field? = nil) async throws -> GoogleBooksResult {
         // Construct URL
         var components = URLComponents(string: GoogleBooks.volumes)!
+        
+        let text: String
+        if let field = field {
+            text = "\(field.rawValue): \(query)"
+        } else {
+            text = query
+        }
+        
         components.queryItems = [
-            URLQueryItem(name: "q", value: query),
-            // URLQueryItem(name: "key", value: apiKey)
+            URLQueryItem(name: "q", value: text)
         ]
         let url = components.url!
         
@@ -31,6 +38,16 @@ public final class GoogleBooks {
         // Decode data
         let decoder = JSONDecoder()
         return try decoder.decode(GoogleBooksResult.self, from: data)
+    }
+    
+    public enum Field: String {
+        case inTitle = "intitle"
+        case inAuthor = "inauthor"
+        case inPublisher = "inpublisher"
+        case subject
+        case isbn
+        case lccn
+        case oclc
     }
 }
 

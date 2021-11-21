@@ -18,9 +18,9 @@ extension Instance {
         } ?? []
         
         // TODO: Normalize ISBNs and other identifiers
-        if Set(identifiers).intersection(self.identifiers).isEmpty {
+        /*if Set(identifiers).intersection(self.identifiers).isEmpty {
             return
-        }
+        }*/
         
         if let url = volume.volumeInfo.imageLinks?.uncurled.thumbnail?.secure {
             let image = Image(subject: .cover, url: url)

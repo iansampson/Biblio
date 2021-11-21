@@ -72,4 +72,15 @@ final class BiblioTests: XCTestCase {
         // Then
         dump(instance)
     }
+    
+    func testRetrieveInstanceWithISBN() async throws {
+        // Given
+        let service = Biblio.Service(urlSession: .shared)
+        
+        // When
+        let instance = try await service.instance(withISBN: "9781552453278")
+        
+        // Then
+        dump(instance)
+    }
 }
