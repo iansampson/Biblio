@@ -85,18 +85,22 @@ final class BiblioTests: XCTestCase {
             XCTFail()
             return
         }
-
         XCTAssertFalse(instance.images.isEmpty)
     }
     
     func testRetrieveInstanceWithDOI() async throws {
         // Given
         let service = Biblio.Service(urlSession: .shared)
+        let doi = DOI(string: "10.1086/715986")
         
         // When
-        let instance = try await service.instance(withDOI: "10.1086/715986")
+        let instance = try await service.instance(withDOI: doi)
         
         // Then
-        dump(instance)
+        guard let instance = instance else {
+            XCTFail()
+            return
+        }
+        XCTAssertFalse(instance.images.isEmpty)
     }
 }

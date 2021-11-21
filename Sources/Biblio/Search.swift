@@ -79,15 +79,21 @@ final class Service {
         }
     }
     
-    func instance(withDOI doi: String) async throws -> Instance? {
+    func instance(withDOI doi: DOI) async throws -> Instance? {
         let crossRef = CrossRef.Service(urlSession: urlSession)
-        guard let work = try await crossRef.work(withDOI: doi) else {
-            return nil
+        async let work = crossRef.work(withDOI: doi.string)
+        
+        var instance: Instance?
+        for try await metadata in MetadataCrawler(urlSession: urlSession).metadata(atURL: doi.url) {
+            if instance == nil {
+                guard let work = try await work else {
+                    return nil
+                }
+                instance = .init(work)
+            }
+            instance?.merge(metadata)
         }
-        var instance = Instance(work)
-        for try await metadata in MetadataCrawler(urlSession: urlSession).metadata(atURL: work.url) {
-            instance.merge(metadata)
-        }
+        
         return instance
         // TODO: Construct URL with DOI and search earlier (i.e. in parallel)
     }
