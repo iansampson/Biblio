@@ -31,19 +31,52 @@ final class Service {
         return instance
     }*/
     
+    enum IntermediateResult {
+        case bibframeInstanceAndWork(LibraryOfCongress.Instance, LibraryOfCongress.Work)
+        case googleVolume(GoogleVolume)
+    }
+    
+    // ISBN -> SearchResults -> Instance -> Work
     func instance(withISBN isbn: String) async throws -> Instance? {
         let libraryOfCongress = LinkedDataService(urlSession: urlSession)
-        guard let bibframeInstanceURL = try await libraryOfCongress.search(isbn, count: 1).first?.url else {
-            return nil
+        let googleBooks = GoogleBooks(urlSession: urlSession)
+        
+        return try await withThrowingTaskGroup(of: IntermediateResult?.self) { taskGroup in
+            taskGroup.addTask {
+                guard let url = try await libraryOfCongress.search(isbn, count: 1).first?.url else {
+                    return nil
+                }
+                let instance = try await libraryOfCongress.instance(atURL: url)
+                let work = try await libraryOfCongress.work(for: instance)
+                return .bibframeInstanceAndWork(instance, work)
+            }
+            
+            taskGroup.addTask {
+                guard let googleVolume = try await googleBooks.search(for: isbn, field:  .isbn).items.first else {
+                    return nil
+                }
+                return .googleVolume(googleVolume)
+            }
+            
+            var googleVolume: GoogleVolume?
+            var instance: Instance?
+            for try await result in taskGroup {
+                switch result {
+                case let .bibframeInstanceAndWork(bibframeInstance, bibframeWork):
+                    instance = .init(instance: bibframeInstance, work: bibframeWork)
+                case let .googleVolume(volume):
+                    googleVolume = volume
+                case .none:
+                    break
+                }
+            }
+            
+            if let googleVolume = googleVolume {
+                instance?.merge(googleVolume)
+            }
+            
+            return instance
         }
-        let bibframeInstance = try await libraryOfCongress.instance(atURL: bibframeInstanceURL)
-        let googleVolume = try await GoogleBooks(urlSession: urlSession).search(for: isbn, field: .isbn).items.first
-        let bibframeWork = try await libraryOfCongress.work(for: bibframeInstance)
-        var instance = Instance(instance: bibframeInstance, work: bibframeWork)
-        if let googleVolume = googleVolume {
-            instance.merge(googleVolume)
-        }
-        return instance
     }
     
     func instance(withDOI doi: String) async throws -> Instance? {
@@ -57,6 +90,17 @@ final class Service {
         }
         return instance
         // TODO: Construct URL with DOI and search earlier (i.e. in parallel)
+    }
+}
+
+struct DOI {
+    let string: String
+    
+    var url: URL {
+        guard let url = URL(string: "https://doi.org/")?.appendingPathComponent(string) else {
+            fatalError()
+        }
+        return url
     }
 }
 

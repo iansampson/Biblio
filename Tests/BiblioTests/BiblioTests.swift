@@ -81,7 +81,12 @@ final class BiblioTests: XCTestCase {
         let instance = try await service.instance(withISBN: "9781552453278")
         
         // Then
-        dump(instance)
+        guard let instance = instance else {
+            XCTFail()
+            return
+        }
+
+        XCTAssertFalse(instance.images.isEmpty)
     }
     
     func testRetrieveInstanceWithDOI() async throws {
