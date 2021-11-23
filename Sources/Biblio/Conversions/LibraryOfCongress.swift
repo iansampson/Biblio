@@ -57,8 +57,8 @@ extension Instance {
         carrier = instance.carrier
         
         title = instance.title.map {
-            .init(primaryTitle: $0.value,
-                      subtitle: instance.variantTitle?.value,
+            .init(primaryTitle: $0.mainTitle,
+                  subtitle: $0.subtitle,
                   abbreviatedTitle: nil)
         }
         

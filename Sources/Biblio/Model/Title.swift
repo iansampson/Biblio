@@ -7,6 +7,8 @@
 
 struct Title {
     let primaryTitle: String
+    // TODO: Consider renaming to mainTitle to match Bibframe
     let subtitle: String?
     let abbreviatedTitle: String?
+    // TODO: Move to another title instance
 }

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import DOI
+import ISBN
 
 struct MetadataParser {
     // TODO: Consider renaming to MetadataMap
@@ -24,15 +26,15 @@ struct MetadataParser {
             names[key.rawValue] ?? []
         }
         
-        mutating func insert(_ element: Document.Element) {
-            guard element.name == "meta" else {
+        mutating func insert(_ node: Document.Node) {
+            guard node.name == "meta" else {
                 return
             }
             
-            if let content = element.attributes["content"] {
-                if let property = element.attributes["property"] {
+            if let content = node.attributes["content"] {
+                if let property = node.attributes["property"] {
                     properties.append(content, forKey: property)
-                } else if let name = element.attributes["name"] {
+                } else if let name = node.attributes["name"] {
                     names.append(content, forKey: name)
                 }
             }
@@ -57,6 +59,17 @@ struct MetadataParser {
         var classes: [String] = []
     }
     
+    /*func _parse(data: Data, from url: URL) throws -> Metadata {
+        guard var remainingInput = String(bytes: data, encoding: .utf8)?[...] else {
+            fatalError()
+            // TODO: Throw error
+        }
+        
+        while let character = remainingInput.popFirst() {
+            
+        }
+    }*/
+    
     func parse(_ data: Data, from url: URL) throws -> Metadata {
         let document = try Document(data)
         guard let head = document.head,
@@ -64,24 +77,71 @@ struct MetadataParser {
         else {
             throw ParseError.htmlDocumentIsMissingHead
         }
-
+        
+        // TODO: Avoid copying entire text
+        // var identifiers: [Metadata.Identifier] = []
+        
+        
+        /*for node in document.flattened {
+            if let element = node as? Element {
+                element.getAttributes()?.forEach { attribute in
+                    let value = attribute.getValue()
+                    appendIdentifier(value)
+                }
+            } else if let textNode = node as? TextNode {
+                let text = textNode.text()
+                //.trimmingCharacters(in: .whitespacesAndNewlines)
+                appendIdentifier(text)
+                // print(text)
+            }
+        }*/
+        
+        func appendIdentifier(_ string: String, to metadata: inout Metadata) {
+            // TOOD: Ensure uniqueness
+            let identifier: Metadata.Identifier
+            if let doi = try? DOI(string) {
+                identifier = .doi(doi)
+            } else if let isbn = try? ISBN(string) {
+                identifier = .isbn(isbn)
+            } else {
+                return
+            }
+            
+            if !metadata.identifiers.contains(identifier) {
+                metadata.identifiers.append(identifier)
+            }
+        }
+        
         let map = head.children.reduce(into: Map()) { (map, element) in
             map.insert(element)
         }
         
         var context = Context(url: url)
-        let parse = body.events.reduce(into: Metadata(url: url, map: map)) { (parse, event) in
+        let parse = body.events.reduce(into: Metadata(url: url, map: map)) { (metadata, event) in
             switch event {
-            case let .openElement(element):
-                context.ids.append(element.attributes["id"] ?? "")
-                context.classes.append(element.attributes["class"] ?? "")
+            case let .openNode(node):
+                context.ids.append(node.attributes["id"] ?? "")
+                context.classes.append(node.attributes["class"] ?? "")
                 
-                if let image = Image(element, context: context) {
-                    parse.images.append(image)
-                } else if let isbn = Metadata.ISBN(element) {
-                    parse.isbns.append(isbn)
+                if let image = Image(node, context: context) {
+                    metadata.images.append(image)
                 }
-            case .closeElement:
+                
+                else if let text = node.text {
+                    appendIdentifier(text, to: &metadata)
+                }
+                
+                else {
+                    for attribute in node.attributes {
+                        // TODO: Handle attributes with multiple values
+                        appendIdentifier(attribute.value, to: &metadata)
+                    }
+                }
+                
+                /*else if let isbn = Metadata._ISBN(node) {
+                    parse.isbns.append(isbn)
+                }*/
+            case .closeNode:
                 context.ids.removeLast()
                 context.classes.removeLast()
             }

@@ -23,9 +23,10 @@ extension Instance {
                       url: $0.url) }))
         
         // TODO: Normalize ISBNs
-        identifiers = Array(
+        // TODO: Retain order
+        /*identifiers = Array(
             Set(identifiers).union(metadata.isbns.map {
                 Instance.Identifier(type: .isbn,
-                                    value: $0.value) }))
+                                    value: $0.value) }))*/
     }
 }

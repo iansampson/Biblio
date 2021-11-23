@@ -2,11 +2,29 @@
   "object": {
     "pins": [
       {
+        "package": "DOI",
+        "repositoryURL": "https://github.com/iansampson/DOI",
+        "state": {
+          "branch": "main",
+          "revision": "3097693c70f51c89dd5496931c034d8da3705e64",
+          "version": null
+        }
+      },
+      {
         "package": "FeedKit",
         "repositoryURL": "https://github.com/nmdias/FeedKit",
         "state": {
           "branch": "master",
           "revision": "6b03f2e9c18c578fe577c434784772efcfd34a9e",
+          "version": null
+        }
+      },
+      {
+        "package": "ISBN",
+        "repositoryURL": "https://github.com/iansampson/ISBN",
+        "state": {
+          "branch": "main",
+          "revision": "c6add7a3943e8872626dc69054400b034dd2fa56",
           "version": null
         }
       },

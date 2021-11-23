@@ -14,6 +14,8 @@ struct Instance {
     let issuance: Issuance?
     let provisions: [Provision] // provisionActivities?
     let title: Title?
+    // TODO: Consider allowing multiple titles, as Bibframe does
+    // (for variants, abbreviated titles, etc.)
     let work: Work?
     let container: Container?
     var images: [Image]

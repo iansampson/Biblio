@@ -7,7 +7,8 @@
 
 public struct Title {
     public let type: TitleType
-    public let value: String
+    public let mainTitle: String
+    public let subtitle: String?
 }
 
 public enum TitleType: String {

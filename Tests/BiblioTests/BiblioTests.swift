@@ -11,19 +11,10 @@ import XCTest
 import LibraryOfCongress
 import Metadata
 import LetterCase
+import DOI
+import ISBN
 
 final class BiblioTests: XCTestCase {
-    /*func testSearch() async throws {
-        // Given
-        let library = Library()
-        
-        // When
-        let instances = try await library.search(for: "Helen Hajnoczky")
-        
-        // Then
-        print(instances)
-    }*/
-    
     func testMetadataClient() async throws {
         // Given
         let crossRef = CrossRef.Service()
@@ -78,7 +69,8 @@ final class BiblioTests: XCTestCase {
         let service = Biblio.Service(urlSession: .shared)
         
         // When
-        let instance = try await service.instance(withISBN: "9781552453278")
+        let isbn = try ISBN("9781552453278")
+        let instance = try await service.instance(withISBN: isbn)
         
         // Then
         guard let instance = instance else {
@@ -91,7 +83,7 @@ final class BiblioTests: XCTestCase {
     func testRetrieveInstanceWithDOI() async throws {
         // Given
         let service = Biblio.Service(urlSession: .shared)
-        let doi = DOI(string: "10.1086/715986")
+        let doi = try DOI("10.1086/715986")
         
         // When
         let instance = try await service.instance(withDOI: doi)
@@ -102,5 +94,18 @@ final class BiblioTests: XCTestCase {
             return
         }
         XCTAssertFalse(instance.images.isEmpty)
+    }
+    
+    func testRetrieveInstanceFromWebpage() async throws {
+        // Given
+        let service = Biblio.Service(urlSession: .shared)
+        let url = URL(string: "https://www.degruyter.com/document/doi/10.7312/hunt20122/html")!
+        
+        // When
+        let instances = try await service.instances(atURL: url)
+        
+        // Then
+        // TODO: Assert things
+        dump(instances)
     }
 }

@@ -22,7 +22,7 @@ final class LibraryOfCongressTests: XCTestCase {
         let instance = try await service.instance(withID: "20953723")
         
         // Then
-        XCTAssertEqual(instance.title?.value, "Magyarázni")
+        XCTAssertEqual(instance.title?.mainTitle, "Magyarázni")
     }
     
     func testRetrieveWorkWithID() async throws {
@@ -60,8 +60,9 @@ final class LibraryOfCongressTests: XCTestCase {
         XCTAssertEqual(instance.type, .print)
         XCTAssertEqual(instance.identifiers.count, 3)
         XCTAssertNotNil(instance.work)
-        XCTAssertEqual(instance.title?.value, "Dani Karavan")
-        XCTAssertEqual(instance.variantTitle?.value, "Hommage an Walter Benjamin")
+        XCTAssertEqual(instance.title?.mainTitle, "Dani Karavan")
+        // XCTAssertEqual(instance.variantTitle?.value, "Hommage an Walter Benjamin")
+        // TODO: Replace when variant titles are available again
         XCTAssertEqual(instance.provisionActivity?.place, "Mainz")
         XCTAssertNotNil(instance.responsibilityStatement)
         XCTAssertEqual(instance.issuance, .monograph)

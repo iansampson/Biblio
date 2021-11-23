@@ -46,11 +46,13 @@ extension Instance: Decodable {
         let titles = try document.expand(instance.titles, into: LinkedData.Title.self)
             .compactMap { title -> Title? in
                 let type = title.type?.first.flatMap(TitleType.init(rawValue:)) ?? .regular
-                guard let value = title.mainTitles?.first?.value else {
+                guard let mainTitle = title.mainTitles?.first?.value else {
                     return nil
                 }
                 // or .subtitle
-                return Title(type: type, value: value)
+                return Title(type: type,
+                             mainTitle: mainTitle,
+                             subtitle: title.subtitles?.first?.value)
             }
             
         title = titles.first { $0.type == .regular }

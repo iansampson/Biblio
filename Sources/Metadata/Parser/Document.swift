@@ -7,27 +7,35 @@
 
 import Foundation
 import SwiftSoup
+import XML
 
 struct Document {
     private let base: SwiftSoup.Document
     
-    var html: Element {
+    var html: Node {
         .init(base)
     }
     
-    var head: Element? {
-        base.head().map(Element.init)
+    var head: Node? {
+        base.head().map(Node.init)
     }
     
-    var body: Element? {
-        base.body().map(Element.init)
+    var body: Node? {
+        base.body().map(Node.init)
     }
     
-    struct Element {
-        private let base: SwiftSoup.Element
+    struct Node {
+        private let base: SwiftSoup.Node
         
-        var name: String {
-            base.tagName()
+        // TODO: Consider packing name, attributes, and text
+        // into an enum
+        
+        var name: String? {
+            if let element = base as? Element {
+                return element.tagName()
+            } else {
+                return nil
+            }
         }
         
         var attributes: Attributes {
@@ -35,22 +43,49 @@ struct Document {
         }
         
         var text: String? {
-            try? base.text()
+            if let textNode = base as? TextNode {
+                return textNode.text()
+            } else {
+                return nil
+            }
         }
         
-        typealias Elements = LazyMapSequence<LazySequence<SwiftSoup.Elements>.Elements, Document.Element>
+        // typealias Elements = LazyMapSequence<LazySequence<SwiftSoup.Elements>.Elements, Document.Node>
         
-        var children: Elements {
-            base.children().lazy.map(Element.init)
+        var children: [Node] {
+            base.getChildNodes().map(Node.init)
         }
         
-        fileprivate init(_ element: SwiftSoup.Element) {
-            base = element
+        fileprivate init(_ node: SwiftSoup.Node) {
+            base = node
         }
     }
     
-    struct Attributes {
+    struct Attribute {
+        let key: String
+        let value: String
+    }
+    
+    struct Attributes: Sequence {
         fileprivate let base: SwiftSoup.Attributes?
+        
+        // Optional<LazyMapSequence<Attributes, Document.Attribute>.Iterator>
+        // typealias Iterator = LazyMapSequence<Attributes, Document.Attribute>.Iterator
+        func makeIterator() -> Iterator {
+            .init(base: base?.makeIterator())
+        }
+        
+        struct Iterator: IteratorProtocol {
+            fileprivate var base: SwiftSoup.Attributes.Iterator?
+            
+            func next() -> Attribute? {
+                guard let baseAttribute = base?.next() else {
+                    return nil
+                }
+                return Attribute(key: baseAttribute.getKey(),
+                                 value: baseAttribute.getValue())
+            }
+        }
         
         subscript(key: String) -> String? {
             if let value = base?.get(key: key),
@@ -63,25 +98,29 @@ struct Document {
     }
     
     enum Event {
-        case openElement(Element)
-        case closeElement(Element)
+        case openNode(Node)
+        case closeNode(Node)
+        
+        // open element
+        // close element
+        // content
     }
     
     struct EventSequence: Sequence {
-        let element: Element
+        let node: Node
         func makeIterator() -> EventIterator {
-            EventIterator(element: element)
+            EventIterator(node: node)
         }
     }
     
     final class EventIterator: IteratorProtocol {
-        let element: Document.Element
-        var iterator: Document.Element.Elements.Iterator? = nil
+        let node: Document.Node
+        var iterator: Array<Document.Node>.Iterator? = nil
         var childIterator: EventIterator? = nil
         var elementIsClosed = false
         
-        init(element: Document.Element) {
-            self.element = element
+        init(node: Document.Node) {
+            self.node = node
         }
         
         func next() -> Event? {
@@ -90,19 +129,19 @@ struct Document {
             }
             
             else if iterator == nil {
-                self.iterator = element.children.makeIterator()
-                return .openElement(element)
+                self.iterator = node.children.makeIterator()
+                return .openNode(node)
             }
             
             while true {
                 if let event = childIterator?.next() {
                     return event
                 } else {
-                    if let childIterator = iterator?.next().map(EventIterator.init(element:)) {
+                    if let childIterator = iterator?.next().map(EventIterator.init(node:)) {
                         self.childIterator = childIterator
                     } else {
                         elementIsClosed = true
-                        return .closeElement(element)
+                        return .closeNode(node)
                     }
                 }
             }
@@ -115,8 +154,8 @@ struct Document {
     }
 }
 
-extension Document.Element {
+extension Document.Node {
     var events: Document.EventSequence {
-        .init(element: self)
+        .init(node: self)
     }
 }

@@ -10,6 +10,8 @@ import LibraryOfCongress
 import GoogleBooks
 import CrossRef
 import Metadata
+import DOI
+import ISBN
 
 final class Service {
     let urlSession: URLSession
@@ -37,13 +39,16 @@ final class Service {
     }
     
     // ISBN -> SearchResults -> Instance -> Work
-    func instance(withISBN isbn: String) async throws -> Instance? {
+    func instance(withISBN isbn: ISBN) async throws -> Instance? {
         let libraryOfCongress = LinkedDataService(urlSession: urlSession)
         let googleBooks = GoogleBooks(urlSession: urlSession)
         
         return try await withThrowingTaskGroup(of: IntermediateResult?.self) { taskGroup in
             taskGroup.addTask {
-                guard let url = try await libraryOfCongress.search(isbn, count: 1).first?.url else {
+                guard let url = try await libraryOfCongress
+                        .search(isbn.string(format: .isbn13, hyphenated: false)!, count: 1)
+                        .first?.url
+                else {
                     return nil
                 }
                 let instance = try await libraryOfCongress.instance(atURL: url)
@@ -52,7 +57,9 @@ final class Service {
             }
             
             taskGroup.addTask {
-                guard let googleVolume = try await googleBooks.search(for: isbn, field:  .isbn).items.first else {
+                guard let googleVolume = try await googleBooks
+                        .search(for: isbn.string(format: .isbn13, hyphenated: false)!, field:  .isbn)
+                        .items.first else {
                     return nil
                 }
                 return .googleVolume(googleVolume)
@@ -97,16 +104,35 @@ final class Service {
         return instance
         // TODO: Construct URL with DOI and search earlier (i.e. in parallel)
     }
-}
-
-struct DOI {
-    let string: String
     
-    var url: URL {
-        guard let url = URL(string: "https://doi.org/")?.appendingPathComponent(string) else {
-            fatalError()
+    // Retrieves metadata for a webpage at the given URL
+    // TODO: Return an async stream
+    // TODO: Run searches in parallel
+    func instances(atURL url: URL) async throws -> [Instance] {
+        var instances: [Instance] = []
+        for try await metadata in MetadataCrawler(urlSession: urlSession).metadata(atURL: url) {
+            for identifier in metadata.identifiers {
+                switch identifier {
+                case .isbn(let isbn):
+                    if var instance = try? await instance(withISBN: isbn)
+                    {
+                        instance.merge(metadata)
+                        instances.append(instance)
+                    }
+                case .doi(let doi):
+                    if var instance = try? await instance(withDOI: doi) {
+                        instance.merge(metadata)
+                        instances.append(instance)
+                    }
+                }
+            }
+            // TODO: Decide how to select which ISBN is the most relevant
+            // TODO: Submit requests in parallel
+            // TODO: Handle DOIs, ISSNs, etc.
+            // TODO: Careful not to kick off an infinite loop
+            // (i.e. do not call this function from instance(withDOI:)
         }
-        return url
+        return instances
     }
 }
 

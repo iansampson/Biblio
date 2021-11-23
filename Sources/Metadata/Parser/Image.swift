@@ -12,8 +12,8 @@ extension Metadata {
         public let tag: String
         public let url: URL
         
-        private init?(attributeKey key: String, element: Document.Element, context: MetadataParser.Context) {
-            guard element.name == "img" else {
+        private init?(attributeKey key: String, node: Document.Node, context: MetadataParser.Context) {
+            guard node.name == "img" else {
                 return nil
             }
             
@@ -36,7 +36,7 @@ extension Metadata {
             }
             
             var url: URL? {
-                guard let destination = element.attributes["src"],
+                guard let destination = node.attributes["src"],
                       let url = URL(string: destination, relativeTo: context.url)
                 else {
                     return nil
@@ -77,7 +77,7 @@ extension Metadata {
                 return
             }
             
-            guard let tag = element.attributes[key]?.lowercased(),
+            guard let tag = node.attributes[key]?.lowercased(),
                   matches(tag)
             else {
                 return nil
@@ -91,9 +91,9 @@ extension Metadata {
             self.url = url
         }
         
-        init?(_ element: Document.Element, context: MetadataParser.Context) {
-            if let image = Self.init(attributeKey: "id", element: element, context: context)
-                ?? Self.init(attributeKey: "class", element: element, context: context) {
+        init?(_ node: Document.Node, context: MetadataParser.Context) {
+            if let image = Self.init(attributeKey: "id", node: node, context: context)
+                ?? Self.init(attributeKey: "class", node: node, context: context) {
                 self = image
             } else {
                 return nil
