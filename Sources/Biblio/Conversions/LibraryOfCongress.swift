@@ -45,7 +45,7 @@ extension Instance {
         type = instance.type
         
         identifiers = instance.identifiers.map {
-            .init(type: $0.type, value: $0.value)
+            .init(type: $0.type, value: $0.value, qualifier: $0.qualifier)
         }
         
         provisions = instance.provisionActivity

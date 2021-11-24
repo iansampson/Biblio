@@ -56,4 +56,18 @@ extension LinkedData {
             case subtitles = "http://id.loc.gov/ontologies/bibframe/subtitle"
         }
     }
+    
+    struct Identifier: Decodable {
+        let id: String?
+        let types: [String]?
+        let values: [Value]?
+        let qualifiers: [Value]?
+        
+        enum CodingKeys: String, CodingKey {
+            case id = "@id"
+            case types = "@type"
+            case values = "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+            case qualifiers = "http://id.loc.gov/ontologies/bibframe/qualifier"
+        }
+    }
 }

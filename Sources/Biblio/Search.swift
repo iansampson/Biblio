@@ -99,7 +99,8 @@ final class Service {
                                                             AsyncCompactMapSequence<TaskStream<Instance?>, Instance>>
 
     public func instancesFromHTML(atURL url: URL) async throws -> InstanceStream {
-        MetadataCrawler(urlSession: urlSession)
+        var returnedInstances: [Instance] = []
+        return MetadataCrawler(urlSession: urlSession)
             .metadata(atURL: url)
             .flatMap { metadata in
                 TaskStream(metadata.identifiers) { [weak self] identifier -> Instance? in
@@ -111,8 +112,16 @@ final class Service {
                     }
                 }
                 .compactMap { instance -> Instance? in
-                    var instance = instance
-                    instance?.merge(metadata)
+                    guard var instance = instance,
+                          !returnedInstances.contains(where: {
+                              // Or URL
+                              $0.identifiers == instance.identifiers
+                          })
+                    else {
+                        return nil
+                    }
+                    instance.merge(metadata)
+                    returnedInstances.append(instance)
                     return instance
                 }
             }

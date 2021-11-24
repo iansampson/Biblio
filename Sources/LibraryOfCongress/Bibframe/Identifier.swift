@@ -8,26 +8,32 @@
 public struct Identifier {
     public let type: IdentifierType
     public let value: String
+    public let qualifier: String?
 }
 
 extension Array where Element == Identifier {
     init(expanding identifiers: [Link]?, in document: Document) throws {
-        self = try document.expand(identifiers, into: Node.self)
+        self = try document.expand(identifiers, into: LinkedData.Identifier.self)
             .compactMap {
                 guard let value = $0.values?.first?.value?.trimmingCharacters(in: .whitespacesAndNewlines),
                       let identifierTypeRawValue = $0.types?.first,
-                      let identifierType = IdentifierType(rawValue: identifierTypeRawValue)
+                      let identifierType = IdentifierType(rawValue: identifierTypeRawValue),
+                      let qualifier = $0.values?.compactMap({ $0.value }).first
+                        // TODO: Test for multiple qualifiers
                 else {
                     return nil
                 }
-                return Identifier(type: identifierType, value: value)
+                
+                return Identifier(type: identifierType,
+                                  value: value,
+                                  qualifier: qualifier)
             }
     }
 }
 
-extension Dictionary where Key == IdentifierType, Value == String {
+/*extension Dictionary where Key == IdentifierType, Value == String {
     init(expanding identifiers: [Link]?, in document: Document) throws {
-        let identifiers: [(IdentifierType, String)] = try document.expand(identifiers, into: Node.self)
+        let identifiers: [(IdentifierType, String)] = try document.expand(identifiers, into: LinkedData.Identifier.self)
             .compactMap {
                 guard let value = $0.values?.first?.value?.trimmingCharacters(in: .whitespacesAndNewlines),
                       let identifierTypeRawValue = $0.types?.first,
@@ -39,4 +45,4 @@ extension Dictionary where Key == IdentifierType, Value == String {
             }
         self.init(uniqueKeysWithValues: identifiers)
     }
-}
+}*/
