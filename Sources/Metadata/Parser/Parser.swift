@@ -78,24 +78,6 @@ struct MetadataParser {
             throw ParseError.htmlDocumentIsMissingHead
         }
         
-        // TODO: Avoid copying entire text
-        // var identifiers: [Metadata.Identifier] = []
-        
-        
-        /*for node in document.flattened {
-            if let element = node as? Element {
-                element.getAttributes()?.forEach { attribute in
-                    let value = attribute.getValue()
-                    appendIdentifier(value)
-                }
-            } else if let textNode = node as? TextNode {
-                let text = textNode.text()
-                //.trimmingCharacters(in: .whitespacesAndNewlines)
-                appendIdentifier(text)
-                // print(text)
-            }
-        }*/
-        
         func appendIdentifier(_ string: String, to metadata: inout Metadata) {
             // TOOD: Ensure uniqueness
             let identifier: Metadata.Identifier
@@ -127,7 +109,7 @@ struct MetadataParser {
                     metadata.images.append(image)
                 }
                 
-                else if let text = node.text {
+                else if let text = node.text { // ?.trimmingCharacters(in: .whitespacesAndNewlines) {
                     appendIdentifier(text, to: &metadata)
                 }
                 

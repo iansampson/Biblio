@@ -100,7 +100,8 @@ final class BiblioTests: XCTestCase {
     func testRetrieveInstanceFromWebpage() async throws {
         // Given
         let service = Biblio.Service(urlSession: .shared)
-        let url = URL(string: "https://www.degruyter.com/document/doi/10.7312/hunt20122/html")!
+        // let url = URL(string: "https://www.degruyter.com/document/doi/10.7312/hunt20122/html")!
+        let url = URL(string: "https://www.dukeupress.edu/the-forms-of-the-affects")!
         
         // When
         let instances = try await service.instancesFromHTML(atURL: url)
