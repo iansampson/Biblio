@@ -16,7 +16,7 @@ import ISBN
 final class Service {
     let urlSession: URLSession
     
-    init(urlSession: URLSession) {
+    public init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
     
@@ -39,7 +39,7 @@ final class Service {
     }
     
     // ISBN -> SearchResults -> Instance -> Work
-    func instance(withISBN isbn: ISBN) async throws -> Instance? {
+    public func instance(withISBN isbn: ISBN) async throws -> Instance? {
         let libraryOfCongress = LinkedDataService(urlSession: urlSession)
         let googleBooks = GoogleBooks(urlSession: urlSession)
         
@@ -86,7 +86,7 @@ final class Service {
         }
     }
     
-    func instance(withDOI doi: DOI) async throws -> Instance? {
+    public func instance(withDOI doi: DOI) async throws -> Instance? {
         let crossRef = CrossRef.Service(urlSession: urlSession)
         async let work = crossRef.work(withDOI: doi.string)
         
@@ -105,40 +105,48 @@ final class Service {
         // TODO: Construct URL with DOI and search earlier (i.e. in parallel)
     }
     
+    // a stream of asynchronous values
+    // *within* that stream we want to kick off a bunch more
+    // we don’t want to wait for each item in the stream
+    // or rather, we don’t want to pause execution
+    // when we receive each of those values
+    // (Really we’re into Combine territory here,
+    // flatMapping each of these publishers).
+    // When we get a Metadata result,
+    // we want to fire off another request
+    // for each (unique) item in the result.
+    
     // Retrieves metadata for a webpage at the given URL
     // TODO: Return an async stream
     // TODO: Run searches in parallel
-    func instances(atURL url: URL) async throws -> [Instance] {
-        var instances: [Instance] = []
-        for try await metadata in MetadataCrawler(urlSession: urlSession).metadata(atURL: url) {
-            for identifier in metadata.identifiers {
-                switch identifier {
-                case .isbn(let isbn):
-                    if var instance = try? await instance(withISBN: isbn)
-                    {
-                        instance.merge(metadata)
-                        instances.append(instance)
-                    }
-                case .doi(let doi):
-                    if var instance = try? await instance(withDOI: doi) {
-                        instance.merge(metadata)
-                        instances.append(instance)
+    public typealias InstanceStream = AsyncFlatMapSequence<TaskStream<Metadata>,
+                                                            AsyncCompactMapSequence<TaskStream<Instance?>, Instance>>
+    
+    // func instancesFromWebPage(at url: URL)
+    // func instancesFromHTML(at url: URL)
+    public func instancesFromHTML(atURL url: URL) async throws -> InstanceStream {
+        MetadataCrawler(urlSession: urlSession)
+            .metadata(atURL: url)
+            .flatMap { metadata in
+                TaskStream(metadata.identifiers) { [weak self] identifier -> Instance? in
+                    switch identifier {
+                    case .isbn(let isbn):
+                        return try? await self?.instance(withISBN: isbn)
+                    case .doi(let doi):
+                        return try? await self?.instance(withDOI: doi)
                     }
                 }
+                .compactMap { instance -> Instance? in
+                    var instance = instance
+                    instance?.merge(metadata)
+                    return instance
+                }
             }
-            // TODO: Decide how to select which ISBN is the most relevant
-            // TODO: Submit requests in parallel
-            // TODO: Handle DOIs, ISSNs, etc.
-            // TODO: Careful not to kick off an infinite loop
-            // (i.e. do not call this function from instance(withDOI:)
-        }
-        return instances
     }
 }
 
-// Search
-
-// Find an article by DOI
-// and retrieve all the relevant metadata
-
-// LibraryOfCongress + GoogleBooks (for images)
+// TODO: Decide how to select which ISBN is the most relevant
+// TODO: Submit requests in parallel
+// TODO: Handle DOIs, ISSNs, etc.
+// TODO: Careful not to kick off an infinite loop
+// (i.e. do not call this function from instance(withDOI:)

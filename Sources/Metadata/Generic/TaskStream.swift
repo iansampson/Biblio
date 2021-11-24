@@ -65,4 +65,22 @@ public struct TaskStream<Element>: AsyncSequence {
             }
         }
     }
+    
+    // TODO: Handle errors
+    public init<S>(_ elements: S, _ transform: @escaping (S.Element) -> Element) where S: Sequence {
+        base = .init { (continuation: Base.Continuation) in
+            Task {
+                await withThrowingTaskGroup(of: Void.self) { taskGroup in
+                    for element in elements {
+                        taskGroup.addTask {
+                            let result = transform(element)
+                            continuation.yield(result)
+                            return ()
+                        }
+                    }
+                }
+                continuation.finish(throwing: nil)
+            }
+        }
+    }
 }

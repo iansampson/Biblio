@@ -10,12 +10,12 @@ import LibraryOfCongress
 
 extension Instance {
     mutating func merge(_ volume: GoogleVolume) {
-        let identifiers: [Instance.Identifier] = volume.volumeInfo.industryIdentifiers?.compactMap {
+        /*let identifiers: [Instance.Identifier] = volume.volumeInfo.industryIdentifiers?.compactMap {
             guard let type = IdentifierType($0.type) else {
                 return nil
             }
             return Instance.Identifier(type: type, value: $0.identifier)
-        } ?? []
+        } ?? []*/
         
         // TODO: Normalize ISBNs and other identifiers
         /*if Set(identifiers).intersection(self.identifiers).isEmpty {
