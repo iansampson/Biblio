@@ -20,19 +20,6 @@ final class Service {
         self.urlSession = urlSession
     }
     
-    // TODO: Consider returning a stream of Instances as the updates roll in
-    /*func instance(withISBN isbn: String) async throws -> Instance? {
-        let libraryOfCongress = LinkedDataService(urlSession: urlSession)
-        async let bibframeInstance = libraryOfCongress.instance(withID: isbn)
-        async let googleVolume = GoogleBooks(urlSession: urlSession).search(for: isbn, field: .isbn).items.first
-        let bibframeWork = try await libraryOfCongress.work(for: bibframeInstance)
-        var instance = try await Instance(instance: bibframeInstance, work: bibframeWork)
-        if let googleVolume = try await googleVolume {
-            instance.merge(googleVolume)
-        }
-        return instance
-    }*/
-    
     enum IntermediateResult {
         case bibframeInstanceAndWork(LibraryOfCongress.Instance, LibraryOfCongress.Work)
         case googleVolume(GoogleVolume)
@@ -105,25 +92,12 @@ final class Service {
         // TODO: Construct URL with DOI and search earlier (i.e. in parallel)
     }
     
-    // a stream of asynchronous values
-    // *within* that stream we want to kick off a bunch more
-    // we don’t want to wait for each item in the stream
-    // or rather, we don’t want to pause execution
-    // when we receive each of those values
-    // (Really we’re into Combine territory here,
-    // flatMapping each of these publishers).
-    // When we get a Metadata result,
-    // we want to fire off another request
-    // for each (unique) item in the result.
-    
     // Retrieves metadata for a webpage at the given URL
     // TODO: Return an async stream
     // TODO: Run searches in parallel
     public typealias InstanceStream = AsyncFlatMapSequence<TaskStream<Metadata>,
                                                             AsyncCompactMapSequence<TaskStream<Instance?>, Instance>>
-    
-    // func instancesFromWebPage(at url: URL)
-    // func instancesFromHTML(at url: URL)
+
     public func instancesFromHTML(atURL url: URL) async throws -> InstanceStream {
         MetadataCrawler(urlSession: urlSession)
             .metadata(atURL: url)
@@ -145,8 +119,12 @@ final class Service {
     }
 }
 
-// TODO: Decide how to select which ISBN is the most relevant
-// TODO: Submit requests in parallel
-// TODO: Handle DOIs, ISSNs, etc.
-// TODO: Careful not to kick off an infinite loop
-// (i.e. do not call this function from instance(withDOI:)
+// Consider returning partial results, since Google Books
+// takes longer than the others and the image will load
+// asynchronously anyway). You could make an enum
+// that contains the main record (i.e. the BiblioInstance)
+// and then mergable updates, like the GoogleVolume.
+// Or a replacement BiblioInstance (with a matching ID).
+// Or a class that updates itself, but I’m not fond of that idea.
+// Consider splitting instances with multiple IDs (e.g. Library
+// of Congress Instances) into separate instances
