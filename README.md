@@ -26,12 +26,12 @@ let package = Package(
 ## Usage
 
 You can import specific modules for each service
-(LibraryOfCongress, CrossRef, GoogleBooks, or Metadata)
-or the Biblio module, which aggregates results
-from all of the above.
+(LibraryOfCongress, CrossRef, GoogleBooks, or Metadata) –
+or the Biblio module, which merges results
+from all of these services into a common format.
 
-Construct a `Service` object (or `Biblio.Service` if disambiguation
-is needed) using an `URLSession`:
+Construct a `Service` object (or `Biblio.Service` if `Service` is ambiguous) 
+using an `URLSession`:
 
 ``` Swift
 let service = Service(urlSession: .shared)
